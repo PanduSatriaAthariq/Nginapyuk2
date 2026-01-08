@@ -1,0 +1,1690 @@
+html {
+    scroll-behavior: smooth;
+}
+#deskripsi-lengkap,
+#ulasan-hotel,
+#lokasi-hotel,
+#pilihan-kamar { 
+    scroll-margin-top: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+
+/* CONTENT CARD */
+.content-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #E0E0E0;
+    padding: 40px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.hotel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.hotel-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stars {
+    color: #FCC900;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.hotel-address {
+    color: #666;
+    font-size: 16px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.header-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.price-container {
+    margin-bottom: 12px;
+}
+
+.price-original {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 8px;
+}
+
+.price-final {
+    font-size: 28px;
+    font-weight: 800;
+    color: #000;
+}
+
+.btn-pilih {
+    background-color: #1F12D4;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-pilih:hover {
+    background-color: #150cb8;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 16px;
+    height: 420px; 
+    width: 100%;
+}
+
+.gallery-main {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-sub {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 100%;
+}
+
+.gallery-sub img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* DETAILS SECTION */
+.details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    width: 100%;
+    margin-top: 40px; 
+}
+
+.info-box {
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    background: #fff;
+}
+
+.info-box h3, 
+.description-box h3, 
+.location-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.reasons-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.reason-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80px;
+}
+
+.reason-icon-box {
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.reason-item span {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+.facilities-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.facility-item {
+    font-size: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.facility-item i {
+    font-size: 12px;
+    color: #000;
+}
+
+.description-box {
+    margin-top: 10px;
+}
+
+.description-box p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.link-blue {
+    color: #1F12D4;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.rating-box {
+    padding: 24px;
+}
+
+.rating-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.score-box {
+    background-color: #1F12D4;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.score-total {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.score-label {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.review-snippet {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.location-box h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-list {
+    list-style: none;
+}
+
+.location-list li {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.location-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ROOM CARD DEFAULT (DESKTOP) */
+.room-card {
+    padding: 30px 40px;
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.room-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #000;
+}
+
+.room-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.room-left {
+    width: 38%;
+    flex-shrink: 0;
+}
+
+.room-gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+    aspect-ratio: 2 / 1; 
+    width: 100%;
+}
+
+.room-main-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.room-main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.room-sub-imgs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.room-sub-imgs img {
+    width: 100%;
+    height: calc(50% - 5px);
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.room-facilities {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rf-item {
+    font-size: 14px;
+    color: #1A1A1A;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.rf-item i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    margin-top: 2px;
+}
+
+.room-right {
+    width: 62%;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+/* Table Style Desktop */
+.room-table {
+    border: 1px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.rt-header {
+    background-color: #EEEEEE;
+    display: flex;
+    padding: 16px 20px;
+    border-bottom: 1px solid #000;
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+}
+
+.rt-row {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #000;
+    background: #fff;
+}
+
+.rt-row.no-border {
+    border-bottom: none;
+}
+
+.col-ringkasan {
+    flex: 2;
+    padding-right: 20px;
+    min-width: 0;
+}
+
+.col-tamu {
+    flex: 0 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.col-harga {
+    flex: 1.2;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    min-width: 0;
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefit-list li {
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #000;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.benefit-list li i {
+    font-size: 12px;
+    margin-top: 3px;
+    color: #333;
+    flex-shrink: 0;
+}
+
+.user-icon {
+    font-size: 24px;
+    color: #1F12D4;
+}
+
+.price-red {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF3D00;
+    margin-bottom: 8px;
+    white-space: nowrap;
+}
+
+.btn-pesan {
+    background-color: #1F12D4;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.btn-pesan:hover {
+    background-color: #150cb8;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* REVIEW SECTION */
+.review-section-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.review-summary-col .review-card-box {
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.rc-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.rc-score {
+    background-color: #1F12D4;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.rc-total {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.rc-label {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+}
+
+.rc-count {
+    font-size: 13px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 4px;
+}
+
+.rc-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bar-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FCC900;
+    width: 25px;
+}
+
+.progress-track {
+    flex-grow: 1;
+    background-color: #F0F0F0;
+    height: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background-color: #FCC900;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.review-list-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-item {
+    background: #fff;
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 24px;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.u-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.u-date {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+}
+
+.review-badge {
+    background-color: #1F12D4;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.review-text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.page-label {
+    font-size: 14px;
+    color: #000;
+    margin-right: 8px;
+}
+
+.page-num {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #1F12D4;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.page-num:hover, .page-num.active {
+    background-color: #1F12D4;
+    color: #fff;
+    border-color: #1F12D4;
+}
+
+.page-btn {
+    padding: 0 16px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #1F12D4;
+    text-decoration: none;
+    color: #1F12D4;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.page-btn:hover {
+    background-color: #1F12D4;
+    color: #fff;
+}
+
+/* DESKRIPSI META DATA */
+.desc-meta-data {
+    margin-bottom: 24px;
+}
+
+.meta-row {
+    font-size: 16px;
+    color: #1A1A1A;
+    margin-bottom: 12px;
+}
+
+.meta-row strong {
+    font-weight: 700;
+    color: #000;
+    margin-right: 8px;
+}
+
+.desc-paragraph {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* MAPS */
+.map-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #E0E0E0;
+}
+
+/* FOOTER SECTION */
+.foot {
+    background-color: #1F12D4;
+    color: white;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 100px; /* Jarak dari konten atas */
+}
+
+.footWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 2;
+}
+
+.information .footLogo {
+    font-size: 36px;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.information .footLogo span {
+    color: #FCC900;
+}
+
+.information a {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.information a.address {
+    margin-top: 10px;
+    max-width: 250px;
+    display: block;
+}
+
+.about, .help, .sosmed {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.about p, .help p, .sosmed p {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.about a, .help a {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.about a:hover, .help a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.sosmedIcon {
+    display: flex;
+    gap: 20px;
+}
+
+.icon i {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.icon:hover i {
+    transform: translateY(-3px);
+}
+
+.partnerLogo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    flex: 1.5;
+}
+
+.bca img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+.gpaymcard {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.gpaymcard img {
+    height: 25px;
+    width: auto;
+    object-fit: contain;
+}
+
+.wonderfulInd img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+/* COPYRIGHT BOTTOM */
+.copyright {
+    background-color: #0A0647;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    font-size: 13px;
+    font-weight: 400;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* --- RESPONSIVE FOOTER (Tablet/Small Laptop) --- */
+@media screen and (max-width: 1024px) {
+    .main-wrapper {
+        padding: 0 20px;
+        margin: 20px auto;
+        max-width: 100%;
+    }
+
+    /* Header Hotel: Pastikan judul dan harga tidak tabrakan */
+    .hotel-header {
+        flex-wrap: wrap; 
+        gap: 20px;
+    }
+    
+    .header-left {
+        width: 100%; /* Judul ambil full width */
+    }
+
+    .header-right {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        text-align: left;
+    }
+    
+    /* Layout Details Grid: Stack vertikal agar tidak sempit */
+    .details-grid {
+        grid-template-columns: 1fr; /* Ubah jadi 1 kolom */
+        gap: 30px;
+    }
+
+    /* Room Layout: Stack Gambar di atas, Tabel Harga di bawah */
+    .room-layout {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .room-left, .room-right {
+        width: 100%;
+    }
+
+    .room-gallery-grid {
+        /* Buat gambar kamar lebih proporsional di tablet */
+        aspect-ratio: auto;
+        height: 350px; 
+    }
+    
+    /* Footer */
+    .footWrap {
+        padding: 0 20px;
+        flex-wrap: wrap;
+    }
+    .information {
+        flex: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+/* --- TABLET (Max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+
+    /* Search Bar Stack */
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 12px;
+    }
+
+    .search-item {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .search-item:last-child {
+        border-bottom: none;
+    }
+
+    .divider { display: none; }
+
+    .btn-search {
+        width: 100%;
+        margin-left: 0;
+        border-radius: 8px;
+        height: 45px;
+    }
+
+    /* Hotel Header Stack */
+    .hotel-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-right {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Gallery jadi 1 Kolom */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        aspect-ratio: auto;
+        gap: 20px;
+    }
+
+    .gallery-main {
+        height: 300px;
+    }
+
+    .gallery-sub {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        height: auto;
+    }
+    
+    .gallery-sub img {
+        height: 80px;
+    }
+
+    /* Details Section Stack */
+    .details-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .reasons-container {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 15px;
+    }
+
+    /* Room Gallery */
+    .room-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .room-sub-imgs {
+        flex-direction: column;
+    }
+    
+    .room-sub-imgs img {
+        height: 100%;
+    }
+
+    /* Review Grid Stack */
+    .review-section-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer Tablet */
+    .footWrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .partnerLogo {
+        margin-top: 20px;
+    }
+}
+
+/* --- MOBILE (Max-width: 480px) --- */
+/* --- MOBILE (Max-width: 480px) --- */
+@media screen and (max-width: 480px) {
+    /* =========================================
+       FIX: DETAIL, FASILITAS, & RATING MOBILE
+       ========================================= */
+    
+    .review-summary-col .review-card-box {
+        padding: 20px 15px; /* Atas-Bawah 20px, Kiri-Kanan cuma 15px */
+        width: 100%;
+    }
+
+    /* 2. Rapikan Header Skor (Kotak Biru & Teks) */
+    .rc-header {
+        gap: 12px; /* Rapatkan jarak antar elemen */
+        margin-bottom: 15px;
+    }
+    
+    .rc-score {
+        padding: 8px 12px; /* Kecilkan kotak biru */
+        font-size: 20px;   /* Kecilkan font angka skor (desktop: 24px) */
+        border-radius: 8px;
+        flex-shrink: 0;    /* Cegah kotak gepeng */
+    }
+
+    .rc-label {
+        font-size: 16px; /* Kecilkan label "Cukup/Baik" (desktop: 20px) */
+    }
+    
+    .rc-count {
+        font-size: 12px;
+    }
+
+    /* 3. Bar Progress (Kuning) */
+    .rc-bars {
+        gap: 8px; /* Jarak vertikal antar bar lebih rapat */
+    }
+
+    .bar-row {
+        gap: 8px; /* Jarak label angka ke bar lebih rapat */
+    }
+    
+    .bar-label {
+        font-size: 12px;
+        width: 20px; /* Pastikan label angka (9+, 8+) tidak makan tempat */
+    }
+
+    /* 1. Reset Grid Layout Utama */
+    .details-grid {
+        display: flex;
+        flex-direction: column-reverse; /* Rating pindah ke ATAS deskripsi biar user liat skor dulu */
+        gap: 20px;
+    }
+
+    /* 2. Kenapa Nginap Disini (Reasons) 
+       Masalah lama: Flex row bikin item kejepit atau wrapping aneh.
+       Solusi: Grid 2x2 presisi. */
+    .reasons-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Paksa 2 kolom */
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .reason-item {
+        width: 100%;
+        background-color: #f8f9fa; /* Kasih background biar terlihat sebagai 'kotak' */
+        padding: 15px 10px;
+        border-radius: 8px;
+        border: 1px solid #eee;
+    }
+
+    .reason-icon-box {
+        font-size: 24px; /* Kecilin dikit iconnya */
+        margin-bottom: 8px;
+    }
+
+    /* 3. Fasilitas Unggulan 
+       Masalah lama: Mewarisi 4 kolom dari desktop. Hancur di HP.
+       Solusi: Ubah jadi 2 kolom. */
+    .facilities-list {
+        grid-template-columns: 1fr 1fr; /* WAJIB: 2 kolom saja */
+        gap: 10px;
+    }
+
+    .facility-item {
+        font-size: 13px; /* Font lebih kecil agar muat */
+        background: #fff;
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #f0f0f0; /* Border halus biar rapi */
+    }
+
+    /* 4. Deskripsi Hotel */
+    .description-box h3 {
+        margin-bottom: 10px;
+    }
+    .description-box p {
+        font-size: 14px;
+        text-align: justify; /* Opsional: Biar rata kiri-kanan rapi */
+        color: #555;
+    }
+
+    /* 5. Rating Box & Review Snippet */
+    .rating-box {
+        padding: 20px;
+        background-color: #f0f4ff; /* Highlight dikit box ratingnya */
+        border: 1px solid #dbeafe;
+    }
+
+    .rating-header {
+        justify-content: space-between; /* Mentokin kiri kanan */
+        margin-bottom: 10px;
+    }
+
+    .score-box {
+        font-size: 18px; /* Sesuaikan ukuran */
+        padding: 8px 12px;
+    }
+
+    .score-label {
+        font-size: 18px;
+        text-align: right; /* Label rata kanan */
+    }
+
+    .review-snippet {
+        font-size: 13px;
+        margin-bottom: 10px;
+        color: #555;
+    }
+    /* 1. Global Wrapper & Font */
+    .main-wrapper {
+        margin: 10px auto;
+        padding: 0 16px;
+    }
+    .content-card {
+        padding: 20px;
+    }
+
+    /* 2. Hotel Header Mobile Fix */
+    .hotel-header {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .hotel-title {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    .header-right {
+        width: 100%;
+        align-items: flex-start; /* Rata kiri */
+        flex-direction: column;
+        gap: 15px;
+    }
+    .price-container {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .btn-pilih {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* 3. Gallery Scroll Fix */
+    .gallery-grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .gallery-main {
+        height: 220px;
+    }
+    .gallery-sub {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        height: 80px;
+        padding-bottom: 5px;
+    }
+    .gallery-sub img {
+        width: 100px; /* Fix width agar tidak gepeng */
+        height: 100%;
+        flex-shrink: 0;
+    }
+
+    /* 4. Room Card: TRANSFORMASI TOTAL KE CARD VIEW */
+    .room-card {
+        padding: 15px; /* Kurangi padding biar muat */
+    }
+    
+    /* Reset struktur tabel menjadi blok biasa */
+    .room-table {
+        border: none;
+        border-radius: 0;
+    }
+    .rt-header { display: none; } /* Sembunyikan header tabel desktop */
+
+    .rt-row {
+        display: block; /* JANGAN FLEX! Block agar menumpuk ke bawah */
+        border: 1px solid #E0E0E0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 0;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .rt-row.no-border { border-bottom: 1px solid #E0E0E0; }
+
+    /* Kolom diubah menjadi seksi horizontal penuh */
+    .col-ringkasan, .col-tamu, .col-harga {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+    
+    /* Hapus border elemen terakhir */
+    .col-harga { border-bottom: none; }
+
+    /* Header Palsu (Label) */
+    .col-ringkasan::before, .col-tamu::before, .col-harga::before {
+        content: attr(data-label); /* Opsional, atau hardcode text */
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #888;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+    .col-ringkasan::before { content: "Fasilitas & Ketentuan"; }
+    .col-tamu::before { content: "Kapasitas Tamu"; }
+    .col-harga::before { content: "Total Harga"; }
+
+    /* Styling Isi Konten Mobile */
+    .benefit-list { margin: 0; }
+    
+    .col-tamu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Icon di kanan, label di kiri */
+    }
+    .col-tamu .user-icon {
+        font-size: 20px;
+    }
+
+    .col-harga {
+        background-color: #f9f9f9; /* Pembeda visual untuk harga */
+        text-align: center;
+    }
+    .price-red {
+        display: block;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .btn-pesan {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* --- TAMBAHAN KHUSUS BAGIAN INPUT ULASAN & PAGINATION --- */
+
+/* Form Input Ulasan */
+.review-form-box {
+    background: #f8f9fa;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.review-form-box h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1A1A1A;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #1F12D4;
+}
+
+.btn-submit-review {
+    background-color: #1F12D4;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit-review:hover {
+    background-color: #150cb8;
+}
+
+.alert-box {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* Pagination Styling Fix */
+.pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.page-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1F12D4;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.page-link:hover, .page-link.active {
+    background-color: #1F12D4;
+    color: white;
+    border-color: #1F12D4;
+}
+
+.page-link.next {
+    width: auto;
+    padding: 0 20px;
+}
+
+/* --- BOOKING DATE FILTER SECTION (BARU) --- */
+.booking-filter-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px; /* Konsisten dengan content-card */
+    border: 1px solid #E0E0E0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.booking-header {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1A1A1A;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.booking-header i {
+    color: #1F12D4;
+}
+
+.booking-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto; /* 3 Input + 1 Tombol */
+    gap: 20px;
+    align-items: end; /* Ratakan tombol dengan input */
+}
+
+.bf-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.bf-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.bf-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    color: #1A1A1A;
+    background: #fcfcfc;
+    transition: all 0.2s;
+}
+
+.bf-input:focus {
+    outline: none;
+    border-color: #1F12D4;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(31, 18, 212, 0.1);
+}
+
+.btn-update-date {
+    background-color: #1F12D4;
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    height: 47px; /* Menyamakan tinggi dengan input date */
+    transition: background 0.2s;
+}
+
+.btn-update-date:hover {
+    background-color: #150cb8;
+}
+
+/* Responsive untuk Booking Filter */
+@media screen and (max-width: 768px) {
+    .booking-form {
+        grid-template-columns: 1fr; /* Stack ke bawah di HP */
+    }
+    
+    .btn-update-date {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   RESPONSIF TABLET & IPAD (Max-width: 1024px)
+   ============================================================ */
+@media screen and (max-width: 1024px) {
+    
+    /* 1. Atur Wrapper agar tidak mentok pinggir */
+    .main-wrapper {
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    /* 2. Galeri Foto: Ubah jadi 2 kolom besar agar tidak kecil-kecil */
+    .gallery-grid {
+        height: auto; /* Biarkan tinggi menyesuaikan isi */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+    .main-img {
+        grid-column: span 2; /* Gambar utama ambil lebar penuh */
+        height: 400px;
+    }
+    .sub-images img {
+        height: 200px; /* Tinggi gambar kecil */
+    }
+
+    /* 3. Booking Widget (Search Bar atas) jadi 2 baris */
+    .booking-form {
+        grid-template-columns: 1fr 1fr; /* Jadi 2 kolom */
+    }
+    .booking-form button {
+        grid-column: span 2; /* Tombol lebar penuh */
+    }
+}
+
+/* ============================================================
+   RESPONSIF MOBILE (Max-width: 768px)
+   ============================================================ */
+@media screen and (max-width: 768px) {
+
+    /* 1. Reset Booking Widget jadi tumpuk ke bawah */
+    .booking-widget {
+        padding: 20px;
+        margin-top: -50px; /* Sesuaikan posisi overlap */
+    }
+    .booking-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .booking-form {
+        grid-template-columns: 1fr; /* 1 Kolom ke bawah */
+        gap: 15px;
+    }
+    .booking-form button {
+        grid-column: auto;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* 2. Galeri Foto Mobile: Cukup tampilkan 1 gambar utama */
+    .gallery-grid {
+        display: block; /* Matikan grid */
+        height: auto;
+        gap: 20px;
+    }
+    .main-img {
+        width: 100%;
+        height: 250px;
+        border-radius: 12px;
+    }
+    .sub-images {
+        display: none; /* Sembunyikan foto kecil di HP biar rapi */
+    }
+
+    /* 3. Layout Utama: Tumpuk Kiri & Kanan */
+    .content-container {
+        flex-direction: column;
+    }
+    .left-content, .right-content {
+        width: 100%;
+        flex: none;
+    }
+
+    /* 4. Kartu Kamar (Room Card) Jadi Vertikal */
+    .room-card {
+        flex-direction: column; /* Susun atas-bawah */
+    }
+    .room-image {
+        width: 100%;
+        height: 200px; /* Tinggi gambar fix */
+    }
+    .room-details {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    /* Rapikan footer kartu kamar (Harga & Tombol) */
+    .room-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .room-price {
+        text-align: left;
+    }
+    .btn-select {
+        width: 100%; /* Tombol pilih kamar full width */
+        text-align: center;
+    }
+
+    /* 5. Sembunyikan Peta/Sidebar jika terlalu panjang (Opsional) */
+    /* .right-content { display: none; } */ 
+    /* Biarkan tetap muncul tapi posisinya sekarang ada di bawah konten utama */
+}
+
+/* =======================================================
+   FIX FINAL: OVERFLOW IPHONE SE & LAYAR KECIL (375px)
+   ======================================================= */
+@media screen and (max-width: 480px) {
+    
+    /* 1. Beri ruang nafas lebih luas di container utama */
+    /* Sebelumnya 20px, kita kurangi jadi 12px biar box di dalam lebih lega */
+    .content-card {
+        padding: 24px 12px !important; 
+        overflow: hidden; /* Potong apapun yang maksa keluar */
+    }
+
+    /* 2. Mencegah Grid/Flex item menolak mengecil (Grid Blowout Fix) */
+    .review-section-grid, 
+    .review-summary-col {
+        display: block !important; /* Ubah grid jadi block biasa di HP */
+        width: 100% !important;
+        min-width: 0 !important; /* KUNCI: Izinkan elemen menyusut */
+    }
+
+    /* 3. Paksa Box Rating agar pas di body */
+    .review-summary-col .review-card-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px 12px !important; /* Padding dalam ditipiskan */
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+
+    /* 4. Penyesuaian Elemen Bar Kuning */
+    .rc-bars {
+        width: 100%;
+    }
+    
+    .bar-row {
+        width: 100%;
+        gap: 8px !important;
+    }
+    
+    /* Bar Progress harus fleksibel */
+    .progress-track {
+        flex-grow: 1;
+        width: auto !important;
+        min-width: 0 !important; /* Mencegah bar memanjang paksa */
+    }
+
+    /* 5. Fix juga untuk Tombol 'Kirim Ulasan' & Input yang mungkin offside */
+    .review-form-box {
+        padding: 20px 12px !important;
+    }
+    
+    .form-control {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+}

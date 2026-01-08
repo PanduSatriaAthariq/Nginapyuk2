@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pencarian - NginapYuk!</title>
+
+    <link rel="stylesheet" href="css/searchStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    
+    <main class="searchPageContainer">
+
+        <aside class="searchSidebar" id="searchSidebar">
+            
+            <div class="mobileHeader">
+                <button class="btnBack" onclick="toggleFilter()">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali
+                </button>
+                <h3>Filter</h3>
+                <div style="width: 20px;"></div> </div>
+
+            <div class="promoBanner">
+                <img src="image/searchBanner.png" alt="Promo Diskon">
+            </div>
+
+            <div class="filterContainer">
+                
+                <h3>Kelas Hotel</h3>
+                <div class="filterGroup">
+                    <label class="customCheck">
+                        <input type="checkbox" name="stars" onclick="selectOnlyThis(this)">
+                        <span class="checkmark"></span>
+                        <div class="starRow">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </label>
+                    <label class="customCheck">
+                        <input type="checkbox" name="stars" onclick="selectOnlyThis(this)">
+                        <span class="checkmark"></span>
+                        <div class="starRow">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </label>
+                    <label class="customCheck">
+                        <input type="checkbox" name="stars" onclick="selectOnlyThis(this)">
+                        <span class="checkmark"></span>
+                        <div class="starRow">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </label>
+                </div>
+                
+                <hr class="divider">
+
+                <h3>Skor Pengguna</h3>
+                <div class="filterGroup">
+                    <label class="customCheck">
+                        <input type="checkbox" name="scores" onclick="selectOnlyThis(this)">
+                        <span class="checkmark"></span>
+                        <span class="scoreText"><strong>9+</strong> Luar Biasa</span>
+                    </label>
+                    <label class="customCheck">
+                        <input type="checkbox" name="scores" onclick="selectOnlyThis(this)">
+                        <span class="checkmark"></span>
+                        <span class="scoreText"><strong>8+</strong> Sangat Baik</span>
+                    </label>
+                    <label class="customCheck">
+                        <input type="checkbox" name="scores" onclick="selectOnlyThis(this)">
+                        <span class="checkmark"></span>
+                        <span class="scoreText"><strong>7+</strong> Baik</span>
+                    </label>
+                </div>
+
+                <div class="filterAction">
+                    <button class="btnApplyFilter" onclick="toggleFilter()">Terapkan Filter</button>
+                </div>
+
+            </div>
+        </aside>
+
+        <section class="searchResult">
+            
+            <div class="resultHeader">
+                <p>Menampilkan <strong>285</strong> hotel di Jakarta</p>
+                <div class="sortDropdown">
+                    <span>Urutkan:</span>
+                    <select>
+                        <option>Harga Terendah</option>
+                        <option>Harga Tertinggi</option>
+                        <option>Kelas Hotel (Tinggi ke Rendah)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="hotelListContainer">
+
+                <div class="hotelListCard">
+                    <div class="cardImage">
+                        <img src="assets/hotel1.jpg" alt="Huafeng Hotel">
+                    </div>
+                    <div class="cardInfo">
+                        <div class="infoTop">
+                            <div class="titleWrap">
+                                <h2 class="hotelName">HUAFENG HOTEL Jakarta PIK</h2>
+                                <div class="starRow">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="ratingBadge">9.1</div>
+                        </div>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> Tangerang, Banten</p>
+                        <p class="address">Soho Manhattan PIK 2 No 15-21, East Kosambi, Kosambi, Tangerang Regency, Banten, Indonesia</p>
+                        <div class="facilitiesPills">
+                            <span class="pill"><i class="fa-solid fa-square-parking"></i> Parkir Pribadi</span>
+                            <span class="pill"><i class="fa-solid fa-snowflake"></i> AC</span>
+                            <span class="pill"><i class="fa-solid fa-mug-hot"></i> Sarapan Gratis</span>
+                            <span class="pill"><i class="fa-solid fa-dumbbell"></i> Gym</span>
+                        </div>
+                        <hr class="cardDivider">
+                        <div class="cardFooter">
+                            <div class="priceBlock">
+                                <span class="labelDari">Dari</span>
+                                <span class="priceAmount">Rp1.183.617</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="hotelListCard">
+                    <div class="cardImage">
+                        <img src="image/hotelImage/1/1_1.webp" alt="Zest Hotel">
+                    </div>
+                    <div class="cardInfo">
+                        <div class="infoTop">
+                            <div class="titleWrap">
+                                <h2 class="hotelName">Zest Hotel Airport Jakarta</h2>
+                                <div class="starRow">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="ratingBadge">8.6</div>
+                        </div>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> Tangerang, Banten</p>
+                        <p class="address">Jl. Husein Sastranegara No.Kav. 1, Benda, Tangerang</p>
+                        <div class="facilitiesPills">
+                            <span class="pill"><i class="fa-solid fa-wifi"></i> WiFi Gratis</span>
+                            <span class="pill"><i class="fa-solid fa-snowflake"></i> AC</span>
+                        </div>
+                        <hr class="cardDivider">
+                        <div class="cardFooter">
+                            <div class="priceBlock">
+                                <span class="labelDari">Dari</span>
+                                <span class="priceAmount">Rp475.312</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div class="mobileSortOverlay" id="mobileSortOverlay">
+        <div class="mobileSortModal">
+            <div class="modalHeader">
+                <h3>Urutkan</h3>
+                <button onclick="toggleSort()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="sortOptions">
+                <button onclick="applySort('Harga Terendah')">Harga Terendah</button>
+                <button onclick="applySort('Harga Tertinggi')">Harga Tertinggi</button>
+                <button onclick="applySort('Rating Tertinggi')">Rating Tertinggi</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobileFilterBar">
+        <button onclick="toggleFilter()"><i class="fa-solid fa-filter"></i> Filter</button>
+        <button onclick="toggleSort()"><i class="fa-solid fa-sort"></i> Urutkan</button>
+    </div>
+
+    <script>
+        // 1. Logika "Hanya Satu Pilihan" (Mutual Exclusion)
+        function selectOnlyThis(checkbox) {
+            var checkboxes = document.getElementsByName(checkbox.name);
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false;
+            });
+        }
+
+        // 2. Logika Mobile Sidebar (Filter)
+        function toggleFilter() {
+            const sidebar = document.getElementById('searchSidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // 3. Logika Mobile Sort (Urutkan)
+        function toggleSort() {
+            const overlay = document.getElementById('mobileSortOverlay');
+            overlay.classList.toggle('active');
+        }
+
+        function applySort(type) {
+            // Simulasi sort
+            toggleSort(); // Tutup modal
+            // alert("Mengurutkan: " + type); // Opsional: Debugging
+        }
+    </script>
+
+</body>
+</html>

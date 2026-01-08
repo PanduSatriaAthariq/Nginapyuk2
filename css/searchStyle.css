@@ -1,0 +1,379 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --font-primary: 'Outfit', sans-serif;
+    --color-primary: #1F12D4;
+    --color-secondary: #FCC900;
+    --color-bg: #FFFFFF;      
+    --color-text: #000000;
+    --color-border: #e0e0e0;
+    --radius-card: 12px;
+    --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+    margin: 0; padding: 0;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* =========================================
+   2. LAYOUT UTAMA (DESKTOP)
+   ========================================= */
+.searchPageContainer {
+    max-width: 1440px; 
+    margin: 40px auto;
+    padding: 0 100px;
+    
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Sidebar 280px, Konten sisa */
+    gap: 30px;
+    align-items: start;
+    position: relative;
+}
+
+/* =========================================
+   3. SIDEBAR (FILTER)
+   ========================================= */
+.searchSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    height: fit-content;
+}
+
+.mobileHeader { display: none; }
+
+.promoBanner {
+    width: 100%;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+.promoBanner img { width: 100%; height: auto; display: block; }
+
+.filterContainer {
+    background: white;
+    padding: 24px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid #f0f0f0; 
+}
+
+.filterContainer h3 {
+    font-size: 16px; font-weight: 700; margin-bottom: 16px;
+}
+
+.divider { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+
+.filterGroup { display: flex; flex-direction: column; gap: 12px; }
+
+.customCheck {
+    display: flex; align-items: center; gap: 10px;
+    cursor: pointer; font-size: 14px; color: #333; user-select: none;
+}
+.customCheck input { display: none; }
+
+.checkmark {
+    width: 18px; height: 18px;
+    border: 2px solid #ddd; border-radius: 4px;
+    position: relative; transition: 0.2s; flex-shrink: 0;
+}
+
+.customCheck input:checked + .checkmark {
+    background: var(--color-primary); border-color: var(--color-primary);
+}
+.customCheck input:checked + .checkmark::after {
+    content: ''; position: absolute;
+    left: 5px; top: 1px; width: 4px; height: 10px;
+    border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg);
+}
+
+.starRow { color: var(--color-secondary); font-size: 12px; display: flex; gap: 4px; }
+.scoreText strong { color: var(--color-secondary); font-weight: 800; margin-right: 4px; }
+
+.filterAction { margin-top: 24px; }
+.btnApplyFilter {
+    width: 100%; padding: 12px;
+    background-color: var(--color-primary); color: white;
+    border: none; border-radius: 8px;
+    font-weight: 700; font-size: 14px;
+    cursor: pointer; transition: 0.3s;
+}
+.btnApplyFilter:hover { background-color: #150ba0; }
+
+/* =========================================
+   4. HOTEL CONTENT
+   ========================================= */
+.resultHeader {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 20px;
+}
+.resultHeader p { color: #666; font-size: 14px; }
+
+.sortDropdown { position: relative; display: inline-block; }
+.sortDropdown select {
+    -webkit-appearance: none; -moz-appearance: none; appearance: none;
+    padding: 10px 40px 10px 16px; 
+    border-radius: 8px; border: none;
+    background-color: var(--color-primary); 
+    cursor: pointer; font-size: 14px; font-weight: 500; color: #fff; outline: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center; background-size: 10px;
+}
+.sortDropdown select:hover { background-color: #150ba0; }
+
+.hotelListContainer { display: flex; flex-direction: column; gap: 20px; }
+
+/* --- HOTEL CARD (DESKTOP) --- */
+.hotelListCard {
+    background: white;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid #f2f2f2;
+    display: flex;
+    overflow: hidden;
+    min-height: 240px; 
+    transition: transform 0.2s ease;
+
+    text-decoration: none !important; /* Hapus garis bawah link */
+    color: inherit !important;        /* Hapus warna biru link */
+}
+
+.hotelListCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.cardImage { width: 280px; flex-shrink: 0; position: relative; }
+.cardImage img { width: 100%; height: 100%; object-fit: cover; }
+
+.cardInfo {
+    flex: 1; padding: 20px;
+    display: flex; flex-direction: column;
+}
+
+.infoTop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 6px;
+}
+.hotelNameS { font-size: 20px; font-weight: 700; color: #000; margin-bottom: 4px; line-height: 1.3; }
+
+.ratingBadgeS {
+    background: var(--color-primary); color: white;
+    font-weight: 700; font-size: 16px;
+    padding: 6px 12px; border-radius: 8px 0 0 8px;
+    margin-right: -20px; margin-top: -10px;
+}
+
+.location { font-size: 13px; font-weight: 500; color: #555; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.location i { color: #D32F2F; }
+
+.addressS {
+    font-size: 12px; color: #888; margin-bottom: 12px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.facilitiesPills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: auto; }
+.pill {
+    background: #f7f7f7; color: #666;
+    font-size: 11px; font-weight: 500; padding: 4px 10px;
+    border-radius: 4px; display: flex; align-items: center; gap: 5px;
+}
+
+.cardDivider { border: 0; border-top: 1px dashed #eee; margin: 14px 0; }
+
+.cardFooter { display: flex; justify-content: flex-end; }
+.priceBlock { text-align: right; }
+.labelDari { display: block; font-size: 11px; color: #999; margin-bottom: -2px; }
+.priceAmount { font-size: 24px; font-weight: 700; color: #000; } 
+
+.mobileFilterBar { display: none; }
+.mobileSortOverlay { display: none; }
+
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+
+/* 1. TABLET/DESKTOP KECIL (Max 1024px) */
+@media screen and (max-width: 1024px) {
+    .searchPageContainer { padding: 0 40px; }
+    .cardImage { width: 240px; } 
+    .hotelNameS { font-size: 18px; }
+}
+
+/* 2. IPAD & TABLET POTRAIT (Max 768px) - MODE 2 KOLOM */
+@media screen and (max-width: 768px) {
+    .searchPageContainer {
+        padding: 0 30px;
+        grid-template-columns: 1fr; /* Sidebar Popup */
+        margin-top: 20px;
+        padding-bottom: 100px;
+    }
+
+    /* Sidebar Popup Logic */
+    .searchSidebar {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: white; z-index: 2000;
+        padding: 0;
+        transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+    }
+    .searchSidebar.active { transform: translateY(0); }
+
+    /* Header Filter */
+    .mobileHeader {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 15px 20px;
+        background: white; border-bottom: 1px solid #f0f0f0;
+        position: sticky; top: 0; z-index: 10;
+    }
+    .mobileHeader h3 { font-size: 16px; font-weight: 700; color: black; margin: 0; position: absolute; left: 50%; transform: translateX(-50%); }
+    .btnBack {
+        background: none; border: none; font-size: 14px; font-weight: 600;
+        color: var(--color-primary); cursor: pointer; display: flex; align-items: center; gap: 6px;
+    }
+    .filterContainer { border: none; box-shadow: none; padding: 20px; }
+    .promoBanner { margin: 20px 20px 0 20px; width: calc(100% - 40px); }
+
+    /* --- LAYOUT 2 KOLOM UNTUK IPAD --- */
+    .hotelListContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* JADI 2 KOLOM */
+        gap: 20px;
+    }
+
+    /* Styling Card Vertikal (Image Top) */
+    .hotelListCard {
+        flex-direction: column;
+        min-height: auto;
+        height: auto;
+    }
+
+    .cardImage {
+        width: 100%; 
+        height: 180px; /* Sedikit lebih tinggi biar proporsional */
+        max-height: 200px;
+    }
+
+    .cardInfo { padding: 16px; }
+    .ratingBadgeS { margin-right: -16px; margin-top: -10px; font-size: 14px; padding: 4px 10px; }
+    .hotelNameS { font-size: 18px; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .addressS { font-size: 11px; margin-bottom: 10px; -webkit-line-clamp: 1; }
+    .facilitiesPills { display: none; } /* Tetap hide biar rapi di grid */
+    .cardDivider { margin: 10px 0; }
+    .priceAmount { font-size: 20px; }
+
+    .sortDropdown { display: none; }
+
+    /* Sticky Button */
+    .mobileFilterBar {
+        display: flex; justify-content: center;
+        position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+        background: #121212; padding: 12px 24px; border-radius: 50px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25); z-index: 900; gap: 24px;
+    }
+    .mobileFilterBar button {
+        background: transparent; border: none; color: white;
+        font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; cursor: pointer;
+    }
+
+    /* Modal Sortir */
+    .mobileSortOverlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6); z-index: 2100;
+        display: none; justify-content: center; align-items: flex-end;
+    }
+    .mobileSortOverlay.active { display: flex; }
+    .mobileSortModal {
+        background: white; width: 100%; border-radius: 20px 20px 0 0; padding: 24px 24px 40px 24px; animation: slideUp 0.3s ease;
+    }
+    .modalHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    .modalHeader h3 { font-size: 18px; font-weight: 700; margin: 0; }
+    .modalHeader button { background: none; border: none; font-size: 20px; cursor: pointer; color: #333; }
+    .sortOptions button {
+        display: block; width: 100%; text-align: left; padding: 16px 0; border: none; border-bottom: 1px solid #f0f0f0; background: none; font-size: 15px; color: #333; cursor: pointer;
+    }
+}
+
+/* 3. HP / SMALL MOBILE (Max 576px) - BALIK KE 1 KOLOM */
+@media screen and (max-width: 576px) {
+    .searchPageContainer { padding: 0 20px; }
+    
+    /* Paksa balik jadi 1 kolom di HP */
+    .hotelListContainer {
+        grid-template-columns: 1fr; 
+    }
+
+    .cardImage { height: 200px; } /* Gambar lebih pendek di HP */
+    .hotelNameS { font-size: 16px; }
+    .priceAmount { font-size: 18px; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* =========================================
+   SEARCH BAR BERSIH (TANPA BACKGROUND)
+   ========================================= */
+
+.searchHeader {
+    display: flex;
+    justify-content: center; /* Posisi Tengah Horizontal */
+    align-items: center;
+    width: 100%;
+    padding: 30px 20px;      /* Beri jarak atas-bawah secukupnya */
+    background: transparent; /* Transparan total (Putih ikut body) */
+    margin-top: 0;           /* Reset margin aneh */
+}
+
+/* Mengatur ukuran Search Bar agar konsisten */
+.searchHeader .searchBar {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0;
+    /* Pastikan shadow tetap ada agar search bar 'mengapung' cantik */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
+    border: 1px solid #f0f0f0; /* Opsional: Border tipis biar tajam */
+}
+
+/* Responsif Mobile untuk Search Bar Clean */
+@media screen and (max-width: 768px) {
+    .searchHeader {
+        padding: 15px;
+        margin-top: 10px;
+    }
+    
+    .searchHeader .searchBar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .searchItem {
+        width: 100%;
+        border-right: none !important;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-right: 0;
+    }
+    
+    .searchBtn {
+        width: 100%;
+        height: 50px;
+        border-radius: 8px;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+}

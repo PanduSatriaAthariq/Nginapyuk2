@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NginapYuk!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/hotelStyle.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">
+            NginapYuk<span>!</span>
+        </a>
+        <div class="auth-buttons">
+            <button class="btn btn-masuk">Masuk</button>
+            <button class="btn btn-daftar">Daftar</button>
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        
+        <div class="search-bar">
+            <div class="search-item">
+                <i class="fa-solid fa-location-dot search-icon"></i>
+                <div class="search-text">
+                    <span class="label">Lokasi</span>
+                    <span class="value">Pullman Jakarta</span>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="search-item">
+                <i class="fa-solid fa-calendar search-icon"></i>
+                <div class="search-text">
+                    <span class="label">Check-in / Check-out</span>
+                    <span class="value">Kamis, 27 - 28 Nov</span>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="search-item">
+                <i class="fa-solid fa-user search-icon"></i>
+                <div class="search-text">
+                    <span class="label">Tamu</span>
+                    <span class="value">1 Kamar, 2 Dewasa</span>
+                </div>
+            </div>
+            <button class="btn-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="content-card">
+            
+            <div class="hotel-header">
+                <div class="header-left">
+                    <h1 class="hotel-title">Pullman Jakarta Central Park <span class="stars">★★★★★</span></h1>
+                    <p class="hotel-address">Podomoro City Jl. Let. Jend S Parman, Kav 28, Grogol petamburan, Jakarta Barat, 11470</p>
+                </div>
+                <div class="header-right">
+                    <div class="price-container">
+                        <span class="price-original">Rp 3.000.000</span>
+                        <span class="price-final">Rp 2.400.000</span>
+                    </div>
+                    <button class="btn-pilih" id="btnPilihKamar">Pilih Kamar</button>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-main">
+                    <img src="https://placehold.co/800x600/00AEEF/ffffff?text=Pullman+Exterior" alt="Main View">
+                </div>
+                <div class="gallery-sub">
+                    <img src="https://placehold.co/400x300/1F12D4/ffffff?text=View+1" alt="Sub View">
+                    <img src="https://placehold.co/400x300/1F12D4/ffffff?text=View+2" alt="Sub View">
+                    <img src="https://placehold.co/400x300/1F12D4/ffffff?text=View+3" alt="Sub View">
+                    <img src="https://placehold.co/400x300/1F12D4/ffffff?text=View+4" alt="Sub View">
+                    <img src="https://placehold.co/400x300/1F12D4/ffffff?text=View+5" alt="Sub View">
+                    <img src="https://placehold.co/400x300/1F12D4/ffffff?text=View+6" alt="Sub View">
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="details-left">
+                    
+                    <div class="info-box">
+                        <h3>Kenapa Nginap Disini?</h3>
+                        <div class="reasons-container">
+                            <div class="reason-item">
+                                <div class="reason-icon-box"><i class="fa-solid fa-square-parking"></i></div>
+                                <span>Parkir Pribadi</span>
+                            </div>
+                            <div class="reason-item">
+                                <div class="reason-icon-box"><i class="fa-solid fa-mountain-sun"></i></div>
+                                <span>Pemandangan Bagus</span>
+                            </div>
+                            <div class="reason-item">
+                                <div class="reason-icon-box"><i class="fa-solid fa-burger"></i></div>
+                                <span>Makanan Enak</span>
+                            </div>
+                            <div class="reason-item">
+                                <div class="reason-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                                <span>Lokasi Ideal</span>
+                            </div>
+                            <div class="reason-item">
+                                <div class="reason-icon-box"><i class="fa-solid fa-person-swimming"></i></div>
+                                <span>Kolam Renang Bagus</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Fasilitas Unggulan</h3>
+                        <div class="facilities-list">
+                            <div class="facility-item"><i class="fa-solid fa-check"></i> Internet Gratis</div>
+                            <div class="facility-item"><i class="fa-solid fa-check"></i> Kolam Renang</div>
+                            <div class="facility-item"><i class="fa-solid fa-check"></i> Parkir Gratis</div>
+                            <div class="facility-item"><i class="fa-solid fa-check"></i> Spa</div>
+                            <div class="facility-item"><i class="fa-solid fa-check"></i> Resepsionis (24 Jam)</div>
+                            <div class="facility-item"><i class="fa-solid fa-check"></i> Tempat Olahraga</div>
+                            <div class="facility-item"><i class="fa-solid fa-check"></i> Restoran</div>
+                            <div class="facility-item"><i class="fa-solid fa-check"></i> Bar</div>
+                        </div>
+                    </div>
+
+                    <div class="description-box">
+                        <h3>Deskripsi Hotel</h3>
+                        <p>Pullman Jakarta Central Park adalah hotel bintang 5 di Podomoro City, Jakarta Barat, yang bersebelahan dengan Central Park Mall. Hotel ini memiliki 317 kamar dan suite, termasuk Collage All Day Dining...</p>
+                        <a href="#deskripsi-lengkap" class="link-blue">Lihat semua</a>
+                    </div>
+
+                </div>
+
+                <div class="details-right">
+                    <div class="info-box rating-box">
+                        <div class="rating-header">
+                            <div class="score-box">8.9<span class="score-total">/10</span></div>
+                            <div class="score-label">Sangat Baik</div>
+                        </div>
+                        <p class="review-snippet">Lokasinya sempurna, sebelah mall. Stafnya ramah dan profesional. Sangat pantas mendapatkan apresiasi!</p>
+                        <a href="#ulasan-hotel" class="link-blue">Lihat semua</a>
+                    </div>
+
+                    <div class="info-box location-box">
+                        <h3><i class="fa-solid fa-location-dot"></i> Dekat Dengan</h3>
+                        <ul class="location-list">
+                            <li>Stasiun Setiabudi Astra (9.4 km)</li>
+                            <li>Stasiun MRT Senayan (9.7 km)</li>
+                            <li>Halim Perdanakusuma (18.9 km)</li>
+                            <li>Soekarno-Hatta (22.7 km)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="content-card room-card" id="pilihan-kamar">
+            <h2 class="room-name">Kamar Deluxe (2 Kasur Single)</h2>
+            <div class="room-layout">
+                <div class="room-left">
+                    <div class="room-gallery-grid">
+                        <div class="room-main-img">
+                            <img src="https://placehold.co/400x300/e0e0e0/888?text=Bedroom" alt="Kamar Utama">
+                        </div>
+                        <div class="room-sub-imgs">
+                            <img src="https://placehold.co/200x150/e0e0e0/888?text=1" alt="Sub 1">
+                            <img src="https://placehold.co/200x150/e0e0e0/888?text=2" alt="Sub 2">
+                        </div>
+                    </div>
+                    <div class="room-facilities">
+                        <div class="rf-item"><i class="fa-solid fa-bed"></i> 2 Kasur Single</div>
+                        <div class="rf-item"><i class="fa-solid fa-city"></i> Pemandangan: Kota</div>
+                        <div class="rf-item"><i class="fa-solid fa-ban-smoking"></i> Bebas asap rokok</div>
+                        <div class="rf-item"><i class="fa-solid fa-ruler-combined"></i> 32m²</div>
+                        <div class="rf-item"><i class="fa-solid fa-wifi"></i> Internet Gratis</div>
+                        <div class="rf-item"><i class="fa-solid fa-snowflake"></i> AC</div>
+                        <div class="rf-item"><i class="fa-solid fa-bath"></i> Kamar mandi pribadi</div>
+                    </div>
+                </div>
+                <div class="room-right">
+                    <div class="room-table">
+                        <div class="rt-header">
+                            <div class="col-ringkasan">Ringkasan</div>
+                            <div class="col-tamu">Jumlah Tamu</div>
+                            <div class="col-harga">Harga</div>
+                        </div>
+                        <div class="rt-row">
+                            <div class="col-ringkasan">
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Sarapan tersedia (Rp.327.000/orang)</li>
+                                    <li><i class="fa-solid fa-check"></i> Tidak bisa refund</li>
+                                    <li><i class="fa-solid fa-check"></i> Konfirmasi langsung</li>
+                                    <li><i class="fa-solid fa-check"></i> Bayar di Hotel</li>
+                                </ul>
+                            </div>
+                            <div class="col-tamu centered">
+                                <i class="fa-solid fa-user-group user-icon"></i>
+                            </div>
+                            <div class="col-harga centered-column">
+                                <span class="price-red">Rp2.072.500</span>
+                                <button class="btn-pesan">Pesan Kamar</button>
+                            </div>
+                        </div>
+                        <div class="rt-row no-border">
+                            <div class="col-ringkasan">
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Sarapan tersedia (Rp.327.000/orang)</li>
+                                    <li><i class="fa-solid fa-check"></i> Bisa refund*</li>
+                                    <li><i class="fa-solid fa-check"></i> Konfirmasi langsung</li>
+                                    <li><i class="fa-solid fa-check"></i> Prabayar Online</li>
+                                </ul>
+                            </div>
+                            <div class="col-tamu centered">
+                                <i class="fa-solid fa-user-group user-icon"></i>
+                            </div>
+                            <div class="col-harga centered-column">
+                                <span class="price-red">Rp2.300.500</span>
+                                <button class="btn-pesan">Pesan Kamar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card room-card">
+            <h2 class="room-name">Kamar Deluxe (1 Kasur King)</h2>
+            <div class="room-layout">
+                <div class="room-left">
+                    <div class="room-gallery-grid">
+                        <div class="room-main-img">
+                            <img src="https://placehold.co/400x300/e0e0e0/888?text=King+Bedroom" alt="Kamar Utama">
+                        </div>
+                        <div class="room-sub-imgs">
+                            <img src="https://placehold.co/200x150/e0e0e0/888?text=1" alt="Sub 1">
+                            <img src="https://placehold.co/200x150/e0e0e0/888?text=2" alt="Sub 2">
+                        </div>
+                    </div>
+                    <div class="room-facilities">
+                        <div class="rf-item"><i class="fa-solid fa-bed"></i> 1 Kasur King Size</div>
+                        <div class="rf-item"><i class="fa-solid fa-city"></i> Pemandangan: Kota</div>
+                        <div class="rf-item"><i class="fa-solid fa-ban-smoking"></i> Bebas asap rokok</div>
+                        <div class="rf-item"><i class="fa-solid fa-ruler-combined"></i> 32m²</div>
+                        <div class="rf-item"><i class="fa-solid fa-wifi"></i> Internet Gratis</div>
+                        <div class="rf-item"><i class="fa-solid fa-snowflake"></i> AC</div>
+                        <div class="rf-item"><i class="fa-solid fa-bath"></i> Kamar mandi pribadi</div>
+                    </div>
+                </div>
+                <div class="room-right">
+                    <div class="room-table">
+                        <div class="rt-header">
+                            <div class="col-ringkasan">Ringkasan</div>
+                            <div class="col-tamu">Jumlah Tamu</div>
+                            <div class="col-harga">Harga</div>
+                        </div>
+                        <div class="rt-row">
+                            <div class="col-ringkasan">
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Sarapan tersedia (Rp.327.000/orang)</li>
+                                    <li><i class="fa-solid fa-check"></i> Tidak bisa refund</li>
+                                    <li><i class="fa-solid fa-check"></i> Konfirmasi langsung</li>
+                                    <li><i class="fa-solid fa-check"></i> Bayar di Hotel</li>
+                                </ul>
+                            </div>
+                            <div class="col-tamu centered">
+                                <i class="fa-solid fa-user-group user-icon"></i>
+                            </div>
+                            <div class="col-harga centered-column">
+                                <span class="price-red">Rp2.072.500</span>
+                                <button class="btn-pesan">Pesan Kamar</button>
+                            </div>
+                        </div>
+                        <div class="rt-row no-border">
+                            <div class="col-ringkasan">
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Sarapan tersedia (Rp.327.000/orang)</li>
+                                    <li><i class="fa-solid fa-check"></i> Bisa refund*</li>
+                                    <li><i class="fa-solid fa-check"></i> Konfirmasi langsung</li>
+                                    <li><i class="fa-solid fa-check"></i> Prabayar Online</li>
+                                </ul>
+                            </div>
+                            <div class="col-tamu centered">
+                                <i class="fa-solid fa-user-group user-icon"></i>
+                            </div>
+                            <div class="col-harga centered-column">
+                                <span class="price-red">Rp2.300.500</span>
+                                <button class="btn-pesan">Pesan Kamar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card room-card">
+            <h2 class="room-name">Kamar Eksekutif (1 Kasur King, Park View)</h2>
+            <div class="room-layout">
+                <div class="room-left">
+                    <div class="room-gallery-grid">
+                        <div class="room-main-img">
+                            <img src="https://placehold.co/400x300/e0e0e0/888?text=Exec+Park+View" alt="Kamar Utama">
+                        </div>
+                        <div class="room-sub-imgs">
+                            <img src="https://placehold.co/200x150/e0e0e0/888?text=1" alt="Sub 1">
+                            <img src="https://placehold.co/200x150/e0e0e0/888?text=2" alt="Sub 2">
+                        </div>
+                    </div>
+                    <div class="room-facilities">
+                        <div class="rf-item"><i class="fa-solid fa-bed"></i> 1 Kasur King Size</div>
+                        <div class="rf-item"><i class="fa-solid fa-tree"></i> Pemandangan: Taman</div>
+                        <div class="rf-item"><i class="fa-solid fa-ban-smoking"></i> Bebas asap rokok</div>
+                        <div class="rf-item"><i class="fa-solid fa-ruler-combined"></i> 32m²</div>
+                        <div class="rf-item"><i class="fa-solid fa-wifi"></i> Internet Gratis</div>
+                        <div class="rf-item"><i class="fa-solid fa-snowflake"></i> AC</div>
+                        <div class="rf-item"><i class="fa-solid fa-bath"></i> Kamar mandi pribadi</div>
+                    </div>
+                </div>
+                <div class="room-right">
+                    <div class="room-table">
+                        <div class="rt-header">
+                            <div class="col-ringkasan">Ringkasan</div>
+                            <div class="col-tamu">Jumlah Tamu</div>
+                            <div class="col-harga">Harga</div>
+                        </div>
+                        <div class="rt-row">
+                            <div class="col-ringkasan">
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Sarapan tersedia (Rp.327.000/orang)</li>
+                                    <li><i class="fa-solid fa-check"></i> Tidak bisa refund</li>
+                                    <li><i class="fa-solid fa-check"></i> Konfirmasi langsung</li>
+                                    <li><i class="fa-solid fa-check"></i> Bayar di Hotel</li>
+                                </ul>
+                            </div>
+                            <div class="col-tamu centered">
+                                <i class="fa-solid fa-user-group user-icon"></i>
+                            </div>
+                            <div class="col-harga centered-column">
+                                <span class="price-red">Rp2.072.500</span>
+                                <button class="btn-pesan">Pesan Kamar</button>
+                            </div>
+                        </div>
+                        <div class="rt-row no-border">
+                            <div class="col-ringkasan">
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Sarapan tersedia (Rp.327.000/orang)</li>
+                                    <li><i class="fa-solid fa-check"></i> Bisa refund*</li>
+                                    <li><i class="fa-solid fa-check"></i> Konfirmasi langsung</li>
+                                    <li><i class="fa-solid fa-check"></i> Prabayar Online</li>
+                                </ul>
+                            </div>
+                            <div class="col-tamu centered">
+                                <i class="fa-solid fa-user-group user-icon"></i>
+                            </div>
+                            <div class="col-harga centered-column">
+                                <span class="price-red">Rp2.300.500</span>
+                                <button class="btn-pesan">Pesan Kamar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card" id="ulasan-hotel">
+            <h2 class="room-name">Ulasan Hotel</h2>
+            
+            <div class="review-section-grid">
+                
+                <div class="review-summary-col">
+                    <div class="review-card-box">
+                        <div class="rc-header">
+                            <div class="rc-score">8.9<span class="rc-total">/10</span></div>
+                            <div class="rc-label">
+                                <div>Sangat Baik</div>
+                                <div class="rc-count">395 Ulasan</div>
+                            </div>
+                        </div>
+                        <div class="rc-bars">
+                            <div class="bar-row">
+                                <span class="bar-label">9+</span>
+                                <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">8+</span>
+                                <div class="progress-track"><div class="progress-fill" style="width: 60%;"></div></div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">7+</span>
+                                <div class="progress-track"><div class="progress-fill" style="width: 40%;"></div></div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">6+</span>
+                                <div class="progress-track"><div class="progress-fill" style="width: 20%;"></div></div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">5+</span>
+                                <div class="progress-track"><div class="progress-fill" style="width: 10%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-list-col">
+                    
+                    <div class="review-item">
+                        <div class="review-user">
+                            <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="user-info">
+                                <div class="u-name">Budi Santoso</div>
+                                <div class="u-date">20 Nov 2025</div>
+                            </div>
+                            <div class="review-badge">9.6/10</div>
+                        </div>
+                        <p class="review-text">Lokasinya sempurna, sebelah mall. Stafnya ramah dan profesional. Sangat pantas mendapatkan apresiasi!</p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-user">
+                            <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="user-info">
+                                <div class="u-name">Siti Aminah</div>
+                                <div class="u-date">18 Nov 2025</div>
+                            </div>
+                            <div class="review-badge">9.0/10</div>
+                        </div>
+                        <p class="review-text">Kamar bersih dan luas. Sarapan enak banyak variasi. Recommended banget buat staycation.</p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-user">
+                            <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="user-info">
+                                <div class="u-name">Joko Anwar</div>
+                                <div class="u-date">15 Nov 2025</div>
+                            </div>
+                            <div class="review-badge">8.5/10</div>
+                        </div>
+                        <p class="review-text">Pelayanan oke, cuma check-in agak antri pas weekend. Sisanya mantap.</p>
+                    </div>
+
+                    <div class="pagination">
+                        <span class="page-label">Halaman:</span>
+                        <a href="#" class="page-num active">1</a>
+                        <a href="#" class="page-num">2</a>
+                        <a href="#" class="page-num">3</a>
+                        <a href="#" class="page-num">...</a>
+                        <a href="#" class="page-btn">Berikutnya</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card" id="lokasi-hotel">
+            <h2 class="room-name">Lokasi Hotel</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Pullman+Jakarta+Central+Park&z=15&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="content-card" id="deskripsi-lengkap">
+            <h2 class="room-name">Deskripsi Hotel</h2>
+            
+            <div class="desc-meta-data">
+                <div class="meta-row"><strong>Diresmikan:</strong> 2011</div>
+                <div class="meta-row"><strong>Telepon:</strong> +62-21-29200088</div>
+                <div class="meta-row"><strong>Jumlah Kamar:</strong> 317</div>
+                <div class="meta-row"><strong>Email:</strong> reservation@pullmanjakartacentralpark.com</div>
+            </div>
+
+            <p class="desc-paragraph">
+                Pullman Jakarta Central Park adalah hotel bintang 5 di Podomoro City, Jakarta Barat, yang bersebelahan dengan Central Park Mall. Hotel ini memiliki 317 kamar dan suite, termasuk Collage All Day Dining yang menyajikan hidangan internasional, BUNK Lobby Lounge yang nyaman, 9 ruang pertemuan & konferensi yang dapat menampung hingga 5.000 delegasi, dan Fit & Spa yang menenangkan. Ideal untuk bisnis & staycation dengan desain interior pop-art-nya. Berjarak 25 menit dari dan ke Bandara Internasional Soekarno-Hatta dan 15 menit akses mudah ke Kawasan Pusat Bisnis Sudirman.
+            </p>
+        </div>
+
+    </div>
+
+    <footer class="foot">
+        <div class="footWrap">
+            
+            <div class="information">
+                <a class="footLogo" href="#">NginapYuk<span>!</span></a>
+                <a href="#">+62 123 4567 8910</a>
+                <a href="#">nginapyuk@gmail.com</a>
+                <a class="address" href="#">Komp GBA 3 blok N 6 24, Cipagalo, Kec. Bojongsoang, Kabupaten Bandung, Jawa Barat 40287</a>
+            </div>
+
+            <div class="about">
+                <p>Tentang</p>
+                <a href="#">Tentang NginapYuk</a>
+                <a href="#">Berita</a>
+                <a href="#">Syarat dan Ketentuan</a>
+                <a href="#">Privasi</a>
+            </div>
+
+            <div class="help">
+                <p>Bantuan</p>
+                <a href="#">Pusat Bantuan</a>
+                <a href="#">FAQ</a>
+            </div>
+
+            <div class="sosmed">
+                <p>Ikuti Kami</p>
+                <div class="sosmedIcon">
+                    <a class="icon" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a class="icon" href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="icon" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="partnerLogo">
+                <div class="bca">
+                    <img src="https://placehold.co/100x40/1F12D4/ffffff?text=BCA" alt="BCA">
+                </div>
+                <div class="gpaymcard">
+                    <img src="https://placehold.co/80x35/1F12D4/ffffff?text=Gopay" alt="Gopay">
+                    <img src="https://placehold.co/60x35/1F12D4/ffffff?text=Mastercard" alt="Mastercard">
+                </div>
+                <div class="wonderfulInd">
+                    <img src="https://placehold.co/120x50/1F12D4/ffffff?text=Wonderful+Indonesia" alt="Wonderful Indonesia">
+                </div>
+            </div>
+
+        </div>    
+    </footer>
+
+    <footer class="copyright">
+        <i class="fa-regular fa-copyright"></i>
+        <p>2025 NginapYuk. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script src="js/hotel (1).js"></script>
+</body>
+</html>

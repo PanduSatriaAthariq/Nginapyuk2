@@ -1,0 +1,2404 @@
+:root {
+    --font-primary: 'Outfit', sans-serif;
+    --fw-light: 300;
+    --fw-extraLight: 200;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --color-primary: #1F12D4;
+    --color-secondary: #FCC900;
+    --fs-btn-primary: 16px;
+    --fs-H1: 40px;
+    --fs-bodytext: 16px;
+}
+
+* {
+    font-family: var(--font-primary);
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navHero {
+    min-height: 517px;
+    background-image: url("../image/Hero Section BG.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.navbarCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 48px;
+    color: var(--color-primary);
+}
+
+.logo span {
+    color: var(--color-secondary);
+}
+
+.loginBtn{
+    display: flex;
+    gap: 20px;
+}
+
+.masukBtn {
+    font-size: var(--fs-btn-primary);
+    font-weight: var(--fw-semibold);
+    color: var(--color-primary);
+    padding: 10px 24px;
+    border: var(--color-primary) solid;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.masukBtn:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+
+.daftarBtn {
+    font-size: var(--fs-btn-primary);
+    font-weight: var(--fw-semibold);
+    color: #fff;
+    padding: 10px 24px;
+    background-color: var(--color-primary);
+    border: transparent solid;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.daftarBtn:hover {
+    background-color: transparent;
+    border: #1F12D4 solid;
+    color: #1F12D4;
+}
+
+
+.heroWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+
+.tagline {
+    font-size: var(--fs-H1);
+    color: var(--color-primary);
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+}
+
+.tagline span{
+    color: var(--color-secondary);
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 10px 10px 10px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.searchItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 20px 5px 0;
+}
+
+.searchItem label {
+    font-size: var(--fs-btn-primary);
+    font-weight: var(--fw-semibold);
+}
+
+.searchItem:nth-child(1), .searchItem:nth-child(2) {
+    border-right: 1px solid #000000;
+    margin-right: 2px;
+}
+
+.searchItem .input i {
+    display: none;
+}
+
+.searchItem .input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: var(--fs-bodytext);
+    font-weight: var(--fw-regular);
+    color: #000000;
+    padding: 0;
+}
+
+.searchItem .input input::placeholder{
+    color: #bdbdbd;
+    opacity: 1;
+}
+
+.searchBtn {
+    font-size: 31.5px;
+    background-color: var(--color-primary);
+    border: none;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
+.searchBtn:hover {
+    width: 62px;
+    height: 62px;
+    font-size: 35.5px;
+}
+
+.input {
+    position: relative; 
+}
+
+.input input[type="text"] {
+    background: transparent;
+    z-index: 1;
+}
+
+.searchItem .input input {
+    width: 100%;
+    cursor: pointer; 
+}
+
+.popDest {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 50px;
+    background-color: #fff;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 0;
+}
+
+.popDest h1 {
+    text-align: left;
+    font-size: var(--fs-H1);
+    font-weight: var(--fw-bold);
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.carouselWrap {
+    position: relative;
+    width: 100%;
+    margin: 1em auto;
+}
+
+.cityCardContainer {
+    display: flex;
+    gap: 22px;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none;
+    padding: 10px 0;
+}
+
+.cityCardContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.cityImage {
+    height: 186px;
+    width: 186px;
+    background-color: #1F12D4;
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    border-radius: 12px;
+    border: none;
+}
+
+.cityCard {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+    scroll-snap-align: end;
+}
+
+.cityCard:hover {
+    transform: translateY(-5px);
+}
+
+/* .cityCardContainer.active {
+    cursor: grabbing;
+    scroll-behavior: auto;
+} */
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-primary); /* Warna Biru */
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10; /* Agar di atas kartu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease, transform 0.2s;
+}
+
+.navBtn:hover {
+    background-color: #150ba0;
+    transform: translateY(-100%) scale(1.1);
+}
+
+.leftBtn {
+    left: -20px; 
+}
+
+.rightBtn {
+    right: -20px;
+}
+
+.navBtn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.promo {
+    background-color: var(--color-primary);
+    min-height: 373px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.promoWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    margin: 0 100px;
+    align-items: flex-start;
+    /* padding: 0 20px; */
+}
+
+.promoWrap h1 {
+    font-size: var(--fs-H1);
+    color: #fff;
+    font-weight: bold;
+}
+
+.promoCardWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.promoCard {
+    height: 178px;
+    width: 292px;
+    background-color: #fff;
+    border: none;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25);
+}
+
+.hotelRec {
+    height: auto;
+    min-height: auto;
+    margin:  50px 100px 0px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.hotelRec h1 {
+    font-size: var(--fs-H1);
+    font-weight: bold;
+}
+
+.hotelCardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* max-width: 1240px; */
+    width: 100%;
+    gap: 24px;
+    /* margin: 40px auto; */
+}
+
+/* =========================================
+   HOTEL CARD COMPONENT
+   ========================================= */
+
+.hotelCard {
+    /* Pastikan Display adalah FLEX, bukan Block */
+    display: flex !important; 
+    flex-direction: column !important; /* Susun atas-bawah */
+    
+    width: 100%; 
+    height: 100%; /* Paksa kartu setinggi container grid-nya */
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer; 
+    
+    /* Reset style link bawaan */
+    text-decoration: none !important;
+    color: inherit !important;
+    
+    overflow: hidden;
+}
+
+/* --- EFEK HOVER (Permintaanmu) --- */
+.hotelCard:hover {
+    /* Kartu naik sedikit */
+    transform: translateY(-8px);
+    
+    /* Bayangan menebal agar terlihat melayang */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    
+    /* Warna border sedikit menggelap */
+    border-color: #d0d0d0;
+}
+
+/* --- BAGIAN GAMBAR & BADGE --- */
+.cardHeader {
+    position: relative; /* KUNCI: Agar badge nurut sama kotak ini */
+    height: 170px; /* Tinggi gambar tetap */
+    width: 100%;
+}
+
+.imgHotel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar dipotong rapi memenuhi kotak */
+    display: block;
+}
+
+/* Badge Rating Kuning */
+.ratingBadge {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    
+    background-color: #FCC900; /* Warna Kuning Brand */
+    color: #000000;
+    font-weight: 700;
+    font-size: 16px;
+    
+    padding: 8px 12px 8px 16px; /* Kiri lebih lebar dikit */
+    border-radius: 8px 0 0 8px; /* Sudut membulat cuma di kiri */
+    box-shadow: -2px 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- BAGIAN KONTEN BAWAH --- */
+.cardBody {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+    /* KUNCI: flex-grow 1 membuat body mengisi sisa ruang kosong di kartu */
+    flex-grow: 1; 
+    
+    gap: 8px;
+}
+
+.hotelName {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    line-height: 1.4;
+    
+    /* KUNCI KONSISTENSI JUDUL */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Bintang Emas */
+.starRating {
+    display: flex;
+    gap: 4px;
+    color: #FCC900; /* Warna Bintang */
+    font-size: 14px;
+}
+
+/* Alamat Abu-abu */
+.address {
+    font-size: 9px;
+    font-weight: var(--fw-light);
+    color: black;
+    line-height: 1.5;
+    margin: 0;
+    
+    /* Opsional: Beri tinggi minimum setara 3 baris agar teks "Dari" sejajar rapi */
+    /* min-height: 40px; */ 
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Footer Harga */
+.priceFooter {
+    /* KUNCI: margin-top auto mendorong footer ini MENTOK ke bawah */
+    margin-top: auto !important; 
+    
+    display: flex;
+    align-items: baseline; 
+    justify-content: flex-end; 
+    gap: 5px;
+}
+
+.priceLabel {
+    font-size: 14px;
+    color: #888888;
+    font-weight: 400;
+}
+
+.priceAmount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.hotelbyCity {
+    max-width: 1240px;
+    margin: 50px 100px;
+    margin-top: 100px;
+}
+
+.cityTabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee; /* Garis abu-abu panjang di bawah */
+}
+
+.hotelbyCity h1 {
+    font-size: var(--fs-H1);
+    font-weight: var(--fw-bold);
+    margin-bottom: 30px;
+}
+
+.tabBtn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #888;
+    padding-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+}
+
+/* Garis Biru untuk Tab Aktif */
+.tabBtn.active {
+    color: var(--color-primary); /* Biru */
+}
+
+.tabBtn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Menutupi garis abu-abu */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 3px 3px 0 0;
+}
+
+.viewAllContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btnPrimary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btnPrimary:hover {
+    background-color: #150ba0;
+}
+
+.trust {
+    height: auto;
+    padding: 60px 0;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 50px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.headline {
+    color: white;
+    font-size: var(--fs-H1);
+    font-weight: bold;
+}
+
+.highlight {
+    color: var(--color-primary);
+    background-color: white;
+    padding: 0 10px;
+}
+
+.acsen {
+    color: var(--color-secondary);
+}
+
+.trustCardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.trustCard {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+}
+
+.trustCard i {
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 26px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.trustCard h3 {
+    font-size: 24px;
+    font-weight: var(--fw-bold);
+}
+
+.sponsor {
+    display: flex;
+    height: auto; 
+    padding: 60px 0;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+.container {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h4 {
+   font-size: 24px;
+   font-weight: var(--fw-bold); 
+}
+
+.sponsBanner {
+    height: 178px;
+    width: 1030px;
+}
+
+.mobile {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    padding: 0 15px 30px 15px;
+}
+
+.mobileBanner {
+    height: auto;
+    width: 100%;
+    max-width: 1240px;
+    aspect-ratio: 1240/391;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25);
+}
+
+.foot {
+    background-color: var(--color-primary);
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.footWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 30px;
+    margin: 100px;
+}
+
+.information {
+
+    gap: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.information a{
+    color: white;
+    max-width: 300px;
+    font-size: var(--fs-bodytext);
+    font-weight: var(--fw-regular);
+}
+
+.information .footLogo{
+    font-size: var(--fs-H1);
+    font-weight: var(--fw-medium);
+    margin-bottom: 30px;
+}
+
+.about {
+    color: white;
+    font-size: 24px;
+    font-weight: var(--fw-semibold);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about a {
+    color: white;
+    font-size: var(--fs-bodytext);
+    font-weight: var(--fw-regular);
+}
+
+.about p {
+    margin-bottom: 30px;
+}
+
+.help {
+    color: white;
+    font-size: 24px;
+    font-weight: var(--fw-semibold);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.help a {
+    color: white;
+    font-size: var(--fs-bodytext);
+    font-weight: var(--fw-regular);
+}
+
+.help p {
+    margin-bottom: 30px;
+}
+
+.sosmed {
+    color: white;
+    font-size: 24px;
+    font-weight: var(--fw-semibold);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sosmed p {
+    margin-bottom: 30px;
+}
+
+.sosmedIcon {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.icon i {
+    font-size: 27px;
+    color: white;
+    padding: 0;
+}
+
+.partnerLogo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.gpaymcard {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.bca img {
+    width: 120px;
+}
+
+.gpaymcard img {
+    height: 32px;
+}
+
+.wonderfulInd img {
+    height: 73px;
+    width: 182px;
+    margin-top: 20px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    background-color: #0A0647;
+    color: white;
+    align-items: center;
+    font-size: 12px;
+    font-weight: var(--fw-light);
+    padding: 20px;
+    gap: 5px;
+    padding-left: 100px;
+}
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+    .navbarCont {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .loginBtn {
+        gap: 10px;
+    }
+
+    .masukBtn,
+    .daftarBtn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbarCont {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .loginBtn {
+        gap: 8px;
+    }
+
+    .masukBtn,
+    .daftarBtn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .heroContent {
+        margin-top: 60px;
+    }
+
+    .tagline {
+        font-size: 32px;
+    }
+
+    .searchBar {
+        padding: 8px;
+        gap: 15px;
+    }
+
+    .searchItem {
+        padding: 5px 15px 5px 0;
+    }
+
+    .searchItem label {
+        font-size: 14px;
+    }
+
+    .searchItem .input input {
+        font-size: 14px;
+    }
+
+    .searchBtn {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+    }
+
+    .searchBtn:hover {
+        width: 52px;
+        height: 52px;
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .heroContent {
+        margin-top: 40px;
+        padding: 0 20px;
+    }
+
+    .tagline {
+        font-size: 28px;
+    }
+
+    .searchBar {
+        padding: 6px;
+        gap: 10px;
+    }
+
+    .searchItem {
+        padding: 4px 10px 4px 0;
+        min-width: 80px;
+    }
+
+    .searchItem label {
+        font-size: 12px;
+    }
+
+    .searchItem .input input {
+        font-size: 12px;
+    }
+
+    .searchBtn {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+    .searchBtn:hover {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .heroContent {
+        margin-top: 30px;
+        padding: 0 15px;
+    }
+
+    .tagline {
+        font-size: 24px;
+    }
+
+    .searchBar {
+        padding: 5px;
+        gap: 8px;
+    }
+
+    .searchItem {
+        padding: 3px 8px 3px 0;
+        min-width: 70px;
+    }
+
+    .searchItem label {
+        font-size: 8px;
+    }
+
+    .searchItem .input input {
+        font-size: 8px;
+    }
+
+    .searchItem .input input::placeholder {
+        font-size: 9px;
+    }
+
+    .searchBtn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .searchBtn:hover {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .navHero {
+        min-height: 450px;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navHero {
+        min-height: 320px;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navHero {
+        min-height: 250px;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .popDest {
+        margin: 50px 60px 0;
+        height: auto;
+        min-height: auto;
+    }
+
+    .popDest h1 {
+        font-size: 32px;
+    }
+
+    .cityImage {
+        height: 160px;
+        width: 160px;
+    }
+
+    .cityCard {
+        width: 180px;
+    }
+
+    .cityCard h2 {
+        font-size: 18px;
+    }
+
+    .cityCard p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popDest {
+        margin: 40px 30px 0;
+        height: auto;
+        min-height: auto;
+        padding-bottom: 20px;
+    }
+
+    .popDest h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .cityImage {
+        height: 140px;
+        width: 140px;
+    }
+
+    .cityCard {
+        width: 160px;
+    }
+
+    .cityCard h2 {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    .cityCard p {
+        font-size: 13px;
+    }
+
+    .cityCardContainer {
+        gap: 15px;
+    }
+
+    .navBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    .leftBtn {
+        left: -15px;
+    }
+
+    .rightBtn {
+        right: -15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popDest {
+        .popDest {
+        margin: 30px 15px 0;
+        height: auto;
+        min-height: 30vh;
+        padding-bottom: 15px;
+    }
+    }
+
+    .popDest h1 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    .cityImage {
+        height: 100px;
+        width: 100px;
+    }
+
+    .cityCard {
+        width: 110px;
+    }
+
+    .cityCard h2 {
+        font-size: 14px;
+        margin-top: 6px;
+    }
+
+    .cityCard p {
+        font-size: 11px;
+    }
+
+    .cityCardContainer {
+        gap: 10px;
+    }
+
+    .navBtn {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .leftBtn {
+        left: -10px;
+    }
+
+    .rightBtn {
+        right: -10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .promo {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        min-height: 350px;
+    }
+
+    .promoWrap {
+        margin: 0 60px;
+    }
+
+    .promoWrap h1 {
+        font-size: 32px;
+    }
+
+    .promoCard {
+        height: 120px;
+        width: 200px;
+    }
+
+    .promoCardWrap {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .promo {
+        min-height: 250px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .promoWrap {
+        margin: 0 30px;
+    }
+
+    .promoWrap h1 {
+        font-size: 28px;
+    }
+
+    .promoCard {
+        height: 100px;
+        width: 160px;
+    }
+
+    .promoCardWrap {
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .promo {
+        min-height: 280px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .promoWrap {
+        margin: 0 15px;
+    }
+
+    .promoWrap h1 {
+        font-size: 24px;
+    }
+
+    .promoCard {
+        height: 80px;
+        width: 140px;
+    }
+
+    .promoCardWrap {
+        gap: 15px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hotelRec {
+        margin: 40px 60px 40px 60px;
+    }
+
+    .hotelRec h1 {
+        font-size: 32px;
+    }
+
+    .hotelCardContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .cardHeader {
+        height: 150px;
+    }
+
+    .hotelName {
+        font-size: 18px;
+    }
+
+    .address {
+        font-size: 8px;
+    }
+
+    .priceAmount {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hotelRec {
+        margin: 40px 30px 0px 30px;
+    }
+
+    .hotelRec h1 {
+        font-size: 28px;
+    }
+
+    .hotelCardContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .cardHeader {
+        height: 120px;
+    }
+
+    .cardBody {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .hotelName {
+        font-size: 14px;
+        -webkit-line-clamp: 2;
+    }
+
+    .starRating {
+        font-size: 10px;
+        gap: 2px;
+    }
+
+    .address {
+        font-size: 7px;
+        -webkit-line-clamp: 2;
+    }
+
+    .priceFooter {
+        margin-top: 5px;
+    }
+
+    .priceLabel {
+        font-size: 10px;
+    }
+
+    .priceAmount {
+        font-size: 16px;
+    }
+
+    .ratingBadge {
+        font-size: 12px;
+        padding: 5px 8px 5px 10px;
+        bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hotelRec {
+        margin: 30px 15px 0px 15px;
+    }
+
+    .hotelRec h1 {
+        font-size: 24px;
+    }
+
+    .hotelCardContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .cardHeader {
+        height: 110px;
+    }
+
+    .cardBody {
+        padding: 10px;
+        gap: 6px;
+    }
+
+    .hotelName {
+        font-size: 13px;
+        -webkit-line-clamp: 2;
+    }
+
+    .starRating {
+        font-size: 9px;
+        gap: 2px;
+    }
+
+    .address {
+        font-size: 7px;
+        -webkit-line-clamp: 2;
+    }
+
+    .priceFooter {
+        margin-top: 4px;
+    }
+
+    .priceLabel {
+        font-size: 9px;
+    }
+
+    .priceAmount {
+        font-size: 14px;
+    }
+
+    .ratingBadge {
+        font-size: 11px;
+        padding: 4px 6px 4px 8px;
+        bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hotelbyCity {
+        margin: 50px 60px;
+    }
+
+    .hotelbyCity h1 {
+        font-size: 32px;
+    }
+
+    .cityTabs {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .tabBtn {
+        font-size: 16px;
+    }
+
+    .hotelbyCity .hotelCardContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hotelbyCity {
+        margin: 40px 60px;
+    }
+
+    .hotelbyCity .hotelCardContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .hotelbyCity .cardHeader {
+        height: 150px;
+    }
+
+    .hotelbyCity .hotelName {
+        font-size: 18px;
+    }
+
+    .hotelbyCity .address {
+        font-size: 8px;
+    }
+
+    .hotelbyCity .priceAmount {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hotelbyCity {
+        margin: 40px 30px;
+    }
+
+    .hotelbyCity h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .cityTabs {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .tabBtn {
+        font-size: 14px;
+        padding-bottom: 8px;
+    }
+
+    .tabBtn.active::after {
+        height: 2px;
+    }
+
+    .hotelbyCity .hotelCardContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .hotelbyCity .cardHeader {
+        height: 120px;
+    }
+
+    .hotelbyCity .cardBody {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .hotelbyCity .hotelName {
+        font-size: 14px;
+        -webkit-line-clamp: 2;
+    }
+
+    .hotelbyCity .starRating {
+        font-size: 10px;
+        gap: 2px;
+    }
+
+    .hotelbyCity .address {
+        font-size: 7px;
+        -webkit-line-clamp: 2;
+    }
+
+    .hotelbyCity .priceFooter {
+        margin-top: 5px;
+    }
+
+    .hotelbyCity .priceLabel {
+        font-size: 10px;
+    }
+
+    .hotelbyCity .priceAmount {
+        font-size: 16px;
+    }
+
+    .hotelbyCity .ratingBadge {
+        font-size: 12px;
+        padding: 5px 8px 5px 10px;
+        bottom: 10px;
+    }
+
+    .viewAllContainer {
+        margin-top: 30px;
+    }
+
+    .btnPrimary {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hotelbyCity {
+        margin: 30px 15px;
+    }
+
+    .hotelbyCity h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .cityTabs {
+        gap: 12px;
+        margin-bottom: 15px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        padding-bottom: 5px;
+    }
+
+    .cityTabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tabBtn {
+        font-size: 13px;
+        padding-bottom: 6px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .hotelbyCity .hotelCardContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .hotelbyCity .cardHeader {
+        height: 110px;
+    }
+
+    .hotelbyCity .cardBody {
+        padding: 10px;
+        gap: 6px;
+    }
+
+    .hotelbyCity .hotelName {
+        font-size: 13px;
+        -webkit-line-clamp: 2;
+    }
+
+    .hotelbyCity .starRating {
+        font-size: 9px;
+        gap: 2px;
+    }
+
+    .hotelbyCity .address {
+        font-size: 7px;
+        -webkit-line-clamp: 2;
+    }
+
+    .hotelbyCity .priceFooter {
+        margin-top: 4px;
+    }
+
+    .hotelbyCity .priceLabel {
+        font-size: 9px;
+    }
+
+    .hotelbyCity .priceAmount {
+        font-size: 14px;
+    }
+
+    .hotelbyCity .ratingBadge {
+        font-size: 11px;
+        padding: 4px 6px 4px 8px;
+        bottom: 8px;
+    }
+
+    .viewAllContainer {
+        margin-top: 20px;
+    }
+
+    .btnPrimary {
+        padding: 10px 24px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .trust {
+        height: auto;
+        min-height: 280px;
+        padding: 40px 60px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .headline {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .trustCardContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .trustCard {
+        width: 220px;
+        padding: 18px;
+    }
+
+    .trustCard i {
+        font-size: 24px;
+        padding: 13px;
+    }
+
+    .trustCard h3 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .trust {
+        min-height: 250px;
+        padding: 30px 30px;
+        gap: 25px;
+    }
+
+    .headline {
+        font-size: 28px;
+    }
+
+    .trustCardContainer {
+        gap: 15px;
+    }
+
+    .trustCard {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .trustCard i {
+        font-size: 22px;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .trustCard h3 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .trust {
+        min-height: auto;
+        padding: 25px 15px;
+        gap: 20px;
+    }
+
+    .headline {
+        font-size: 24px;
+    }
+
+    .trustCardContainer {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .trustCard {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .trustCard i {
+        font-size: 20px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .trustCard h3 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sponsor {
+        height: auto;
+        min-height: auto;
+        padding: 40px 20px;
+        margin-top: 30px;
+        padding: 20px 60px;
+    }
+
+    .container h4 {
+        font-size: 20px;
+    }
+
+    .sponsBanner {
+        height: 150px;
+        width: 100%;
+        max-width: 900px;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sponsor {
+        min-height: auto;
+        padding: 40px 20px;
+        margin-top: 25px;
+        padding: 20px 30px;
+    }
+
+    .container {
+        gap: 15px;
+    }
+
+    .container h4 {
+        font-size: 18px;
+    }
+
+    .sponsBanner {
+        height: 120px;
+        width: 100%;
+        max-width: 700px;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sponsor {
+        min-height: auto;
+        height: auto;
+        margin-top: 20px;
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        gap: 12px;
+    }
+
+    .container h4 {
+        font-size: 16px;
+    }
+
+    .sponsBanner {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mobile {
+        padding: 20px 60px;
+    }
+
+    .mobileBanner {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+
+        aspect-ratio: 1240/391;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile {
+        padding: 20px 30px;
+    }
+
+    .mobileBanner {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+
+        aspect-ratio: 1240/391;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mobile {
+        padding: 15px 15px;
+    }
+
+    .mobileBanner {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 1240 / 391;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .foot {
+        height: auto;
+        min-height: auto;
+        padding: 30px 0;
+    }
+
+    .footWrap {
+        margin: 0 60px;
+        padding-top: 20px;
+        gap: 30px;
+    }
+
+    .information .footLogo {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .information a {
+        font-size: 14px;
+        max-width: 250px;
+    }
+
+    .about,
+    .help,
+    .sosmed {
+        font-size: 20px;
+    }
+
+    .about p,
+    .help p,
+    .sosmed p {
+        margin-bottom: 20px;
+    }
+
+    .about a,
+    .help a {
+        font-size: 14px;
+    }
+
+    .icon i {
+        font-size: 24px;
+    }
+
+    .bca img {
+        width: 100px;
+    }
+
+    .gpaymcard img {
+        height: 28px;
+    }
+
+    .wonderfulInd img {
+        height: 60px;
+        width: 150px;
+        margin-top: 15px;
+    }
+
+    .copyright {
+        padding: 15px 60px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .foot {
+        min-height: auto;
+        padding: 25px 0;
+    }
+
+    .footWrap {
+        margin: 0 30px;
+        padding-top: 15px;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .information {
+        flex-basis: 100%;
+    }
+
+    .information .footLogo {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .information a {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .about,
+    .help,
+    .sosmed {
+        font-size: 18px;
+        flex-basis: calc(33.33% - 20px);
+    }
+
+    .about p,
+    .help p,
+    .sosmed p {
+        margin-bottom: 15px;
+    }
+
+    .about a,
+    .help a {
+        font-size: 13px;
+    }
+
+    .icon i {
+        font-size: 22px;
+    }
+
+    .partnerLogo {
+        flex-basis: 100%;
+        margin-top: 10px;
+    }
+
+    .bca img {
+        width: 90px;
+    }
+
+    .gpaymcard {
+        gap: 20px;
+    }
+
+    .gpaymcard img {
+        height: 26px;
+    }
+
+    .wonderfulInd img {
+        height: 55px;
+        width: 140px;
+        margin-top: 12px;
+    }
+
+    .copyright {
+        padding: 12px 30px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .foot {
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .footWrap {
+        margin: 0 15px;
+        padding-top: 10px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .information {
+        flex-basis: 100%;
+    }
+
+    .information .footLogo {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .information a {
+        font-size: 12px;
+    }
+
+    .about,
+    .help,
+    .sosmed {
+        font-size: 16px;
+        flex-basis: 100%;
+    }
+
+    .about p,
+    .help p,
+    .sosmed p {
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    .about a,
+    .help a {
+        font-size: 12px;
+    }
+
+    .sosmedIcon {
+        gap: 12px;
+    }
+
+    .icon i {
+        font-size: 20px;
+    }
+
+    .partnerLogo {
+        flex-basis: 100%;
+        margin-top: 5px;
+    }
+
+    .bca img {
+        width: 80px;
+    }
+
+    .gpaymcard {
+        gap: 15px;
+    }
+
+    .gpaymcard img {
+        height: 22px;
+    }
+
+    .wonderfulInd img {
+        height: 50px;
+        width: 125px;
+        margin-top: 10px;
+    }
+
+    .copyright {
+        padding: 10px 15px;
+        font-size: 9px;
+        justify-content: center;
+    }
+}
+
+
+.quickMenuSection {
+    margin-top: 40px; /* Jarak dari Hero */
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.quickMenuContainer {
+    background: #ffffff;
+    padding: 15px 30px;
+    border-radius: 100px; /* Bentuk Pill / Lonjong */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Shadow halus */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 1000px; /* Lebar maksimal */
+    width: fit-content;
+    
+    /* Agar responsif di HP */
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.quickMenuContainer::-webkit-scrollbar {
+    display: none; /* Chrome/Safari sembunyikan scrollbar */
+}
+
+/* Item Menu */
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Teks jangan turun baris */
+}
+
+.menuItem:hover {
+    background-color: #f0f0ff; /* Warna hover tipis */
+}
+
+/* Icon Lingkaran */
+.iconBox {
+    width: 36px;
+    height: 36px;
+    background-color: #F5F6F8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menuItem:hover .iconBox {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.menuItem span {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Garis Pemisah Vertikal */
+.menuDivider {
+    width: 1px;
+    height: 30px;
+    background-color: #e0e0e0;
+    margin: 0 5px;
+}
+
+/* =========================================
+   RESPONSIVE QUICK MENU
+   ========================================= */
+
+/* --- TABLET (Max 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .quickMenuSection {
+        margin-top: 30px;
+    }
+    
+    .quickMenuContainer {
+        padding: 12px 25px;
+        gap: 12px;
+    }
+    
+    .menuItem {
+        padding: 6px 14px;
+        gap: 8px;
+    }
+    
+    .iconBox {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .menuItem span {
+        font-size: 13px;
+    }
+    
+    .menuDivider {
+        height: 24px;
+    }
+}
+
+/* --- MOBILE (Max 768px) --- */
+@media screen and (max-width: 768px) {
+    .quickMenuSection {
+        margin-top: 25px;
+    }
+    
+    .quickMenuContainer {
+        padding: 10px 20px;
+        gap: 10px;
+    }
+    
+    .menuItem {
+        padding: 5px 12px;
+        gap: 6px;
+    }
+    
+    .iconBox {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .menuItem span {
+        font-size: 12px;
+    }
+    
+    .menuDivider {
+        height: 20px;
+    }
+}
+
+/* --- SMALL MOBILE (Max 480px) --- */
+@media screen and (max-width: 480px) {
+    .quickMenuSection {
+        margin-top: 20px;
+        padding: 0 50px; /* Sedikit padding kiri-kanan agar tidak mentok layar */
+    }
+    
+    .quickMenuContainer {
+        padding: 8px 15px;
+        gap: 8px;
+        width: 100%; /* Memenuhi lebar container agar rapi di layar kecil */
+        justify-content: center; /* Tengahkan item */
+    }
+    
+    .menuItem {
+        padding: 4px 8px;
+        gap: 5px;
+    }
+    
+    .iconBox {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+    
+    .menuItem span {
+        font-size: 11px;
+    }
+    
+    .menuDivider {
+        height: 16px;
+        margin: 0 2px;
+    }
+}
+
+/* PERBAIKAN FINAL: Bikin Section 'Cari Hotel' Stretch Mengikuti Layar */
+.hotelbyCity {
+    max-width: none !important;    /* Hapus batasan lebar 1240px */
+    width: auto !important;        /* Biarkan dia stretch alami */
+    
+    /* Samakan margin kiri-kanan dengan section Rekomendasi (.hotelRec) */
+    margin-left: 100px !important; 
+    margin-right: 100px !important;
+}
+
+/* Pastikan Grid Card di dalamnya mengisi ruang yang baru terbuka */
+.hotelbyCity .hotelCardContainer {
+    width: 100% !important;
+    display: grid !important;
+    /* Ini memastikan card otomatis mengisi lebar baru */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important; 
+}
+
+/* INTERAKSI MOBILE BANNER */
+.mobileBanner {
+    /* Pastikan transisi halus seperti card lain */
+    transition: all 0.3s ease; 
+    cursor: pointer; /* Ubah kursor jadi telunjuk */
+}
+
+.mobileBanner:hover {
+    /* Efek naik ke atas 8px (sama seperti hotelCard) */
+    transform: translateY(-8px);
+    
+    /* Bayangan sedikit menebal agar efek melayangnya terasa */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+   FIX RESPONSIF HOTEL BY CITY (Menimpa Style Desktop)
+   ============================================================ */
+
+/* 1. UNTUK TABLET (Max 768px) */
+@media screen and (max-width: 768px) {
+    .hotelbyCity {
+        /* Kembalikan margin agar tidak terlalu lebar */
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+        margin-top: 40px !important;
+    }
+    
+    .hotelbyCity .hotelCardContainer {
+        /* Samakan grid dengan rekomendasi (3 kolom di tablet) */
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
+    }
+}
+
+/* 2. UNTUK MOBILE (Max 480px) */
+@media screen and (max-width: 480px) {
+    .hotelbyCity {
+        /* Margin tipis kiri-kanan (Sama persis dengan .hotelRec mobile) */
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        margin-top: 30px !important;
+    }
+
+    .hotelbyCity h1 {
+        font-size: 24px !important; /* Sesuaikan ukuran font judul */
+        margin-bottom: 15px !important;
+    }
+
+    .hotelbyCity .hotelCardContainer {
+        /* Paksa 2 kolom (Sama persis dengan .hotelRec mobile) */
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    /* Perbaikan Tab Kota agar bisa di-scroll menyamping dengan rapi */
+    .cityTabs {
+        width: 100%;
+        overflow-x: auto; /* Aktifkan scroll samping */
+        white-space: nowrap; /* Cegah tombol turun ke bawah */
+        padding-bottom: 5px; /* Beri ruang untuk scrollbar */
+        margin-bottom: 20px;
+        gap: 15px;
+        justify-content: flex-start; /* Mulai dari kiri */
+        
+        /* Sembunyikan scrollbar jelek tapi tetap bisa discroll */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .cityTabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* =========================================
+   AUTH MODAL (POPUP LOGIN/DAFTAR)
+   ========================================= */
+
+/* Overlay Gelap di Belakang Popup */
+.auth-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: none; /* Hidden by default */
+    justify-content: center; align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+/* Kotak Popup */
+.auth-card {
+    background: white;
+    width: 90%; max-width: 420px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    position: relative;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Tombol Close (X) */
+.close-auth {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; font-size: 20px; color: #999;
+    cursor: pointer; transition: 0.2s;
+}
+.close-auth:hover { color: #333; }
+
+/* Tabs (Masuk / Daftar) */
+.auth-tabs {
+    display: flex; border-bottom: 2px solid #f0f0f0; margin-bottom: 25px;
+}
+.auth-tab-btn {
+    flex: 1; padding: 15px;
+    background: none; border: none;
+    font-size: 16px; font-weight: 600; color: #999;
+    cursor: pointer; transition: 0.3s;
+    border-bottom: 2px solid transparent; margin-bottom: -2px;
+}
+.auth-tab-btn.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* Form Styles */
+.auth-form { display: none; flex-direction: column; gap: 15px; }
+.auth-form.active { display: flex; }
+
+.form-group { position: relative; }
+.form-group label {
+    display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;
+}
+.form-input {
+    width: 100%; padding: 12px 15px;
+    border: 1px solid #ddd; border-radius: 8px;
+    font-size: 14px; outline: none; transition: 0.3s;
+    font-family: var(--font-primary);
+}
+.form-input:focus { border-color: var(--color-primary); background: #f9f9ff; }
+
+/* Tombol Submit Utama */
+.btn-auth-action {
+    background-color: var(--color-primary);
+    color: white; font-weight: 700; font-size: 16px;
+    padding: 14px; border: none; border-radius: 10px;
+    cursor: pointer; margin-top: 10px; transition: 0.3s;
+}
+.btn-auth-action:hover { background-color: #150ba0; transform: translateY(-2px); }
+
+/* Link kecil di bawah */
+.auth-footer {
+    text-align: center; font-size: 13px; margin-top: 20px; color: #666;
+}
+.auth-link { color: var(--color-primary); font-weight: 600; text-decoration: none; cursor: pointer; }
+
+/* Pesan Error/Sukses Kecil */
+.alert-mini {
+    padding: 10px; border-radius: 6px; font-size: 13px; margin-bottom: 15px; text-align: center;
+}
+.alert-red { background: #ffebee; color: #c62828; }
+.alert-green { background: #e8f5e9; color: #2e7d32; }

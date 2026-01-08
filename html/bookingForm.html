@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran</title>
+    <link rel="stylesheet" href="css/formStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="navbarCont">
+            <a href="#" class="logo">NginapYuk<span>!</span></a>
+            <div class="loginBtn">
+                <a href="#" class="masukBtn">Masuk</a>
+                <a href="#" class="daftarBtn">Daftar</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="bookingPageContainer">
+
+        <section class="formSection">
+            
+            <div class="hotelInfoCard">
+                <div class="info">
+                    <h1>Pullman Jakarta Central Park</h1>
+                    <div class="starCont">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <h2>8.9</h2>
+                </div>
+                <img src="" alt="hotel">
+            </div>
+
+            <div class="mainInfo">
+                <h1>Data Pemesanan</h1>
+                <div class="form">
+                    <label for="namaLengkap" class="formLabel">Nama Lengkap <span>*</span></label>
+                    <input type="text" id="namaLengkap" name="fullname" class="formInput" placeholder="Sesuai KTP/Paspor" required>
+                </div>
+                <div class="formGroup">
+                    <div class="form">
+                        <label for="email" class="formLabel">Email <span>*</span></label>
+                        <input type="email" id="email" name="email" class="formInput" placeholder="email@contoh.com" required>
+                    </div>
+                    <div class="form">
+                        <label for="telp" class="formLabel">Nomor Telepon <span>*</span></label>
+                        <input type="tel" id="telp" name="phone" class="formInput" placeholder="0812..." required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="request">
+                <h1>Permintaan Khusus</h1>
+                <div class="checkboxList">
+                    
+                    <label class="customCheck">
+                        <input type="checkbox" name="req_checkin" value="1">
+                        <span class="checkmark"></span>
+                        <span class="text">Waktu Check-In</span>
+                    </label>
+
+                    <label class="customCheck">
+                        <input type="checkbox" name="req_checkout" value="1">
+                        <span class="checkmark"></span>
+                        <span class="text">Waktu Check-Out</span>
+                    </label>
+
+                    <label class="customCheck" id="toggleOtherReq">
+                        <input type="checkbox" name="req_other" value="1">
+                        <span class="checkmark"></span>
+                        <span class="text">Permintaan Lainnya</span>
+                    </label>
+                </div>
+
+                <div class="conditionalInput" id="otherReqInput">
+                    <textarea name="other_request_text" placeholder="Tulis permintaan kamu di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="payment">
+                <h1>Metode Pembayaran</h1>
+                
+                <div class="paymentGroupsContainer">
+
+                    <div class="paymentGroupCard">
+                        <h3>Pembayaran Instan</h3>
+                        <div class="paymentOptionsGrid">
+                            
+                            <label class="payOption">
+                                <input type="radio" name="payment_method" value="gopay">
+                                <div class="payCard">
+                                    <img src="assets/gopay.png" alt="GoPay">
+                                    <span class="checkBadge"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                            </label>
+
+                            <label class="payOption">
+                                <input type="radio" name="payment_method" value="ovo">
+                                <div class="payCard">
+                                    <img src="assets/ovo.png" alt="OVO">
+                                    <span class="checkBadge"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="paymentGroupCard">
+                        <h3>Transfer Bank</h3>
+                        <div class="paymentOptionsGrid">
+                            
+                            <label class="payOption">
+                                <input type="radio" name="payment_method" value="bca">
+                                <div class="payCard">
+                                    <img src="assets/bca.png" alt="BCA">
+                                    <span class="checkBadge"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                            </label>
+
+                            <label class="payOption">
+                                <input type="radio" name="payment_method" value="mandiri">
+                                <div class="payCard">
+                                    <img src="assets/mandiri.png" alt="Mandiri">
+                                    <span class="checkBadge"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="paymentGroupCard">
+                        <h3>Akun Virtual</h3>
+                        <div class="paymentOptionsGrid">
+                            
+                            <label class="payOption">
+                                <input type="radio" name="payment_method" value="va_bca">
+                                <div class="payCard">
+                                    <img src="assets/bca_va.png" alt="BCA VA">
+                                    <span class="checkBadge"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="paymentGroupCard">
+                        <h3>Kartu Kredit</h3>
+                        <div class="paymentOptionsGrid">
+                            
+                            <label class="payOption">
+                                <input type="radio" name="payment_method" value="credit_card">
+                                <div class="payCard">
+                                    <img src="assets/mastercard.png" alt="CC">
+                                    <span class="checkBadge"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                            </label>
+
+                            <label class="payOption">
+                                <input type="radio" name="payment_method" value="visa">
+                                <div class="payCard">
+                                    <img src="assets/visa.png" alt="Visa">
+                                    <span class="checkBadge"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="payBtn">BAYAR</button>
+
+        </section>
+
+        <aside  class="summary">
+
+            <div class="wrap">
+
+                <div class="roomCard">
+                    <h1>Deluxe Room</h1>
+                    <div class="roomCardWrap">
+                        <img src="" alt="">
+                        <div class="roomDetailsContainer">
+    
+                            <div class="roomSpecs">
+                                <div class="specItem">
+                                    <i class="fa-solid fa-bed"></i> 
+                                    <span>1 King Bed</span>
+                                </div>
+                                <div class="specItem">
+                                    <i class="fa-solid fa-user-group"></i> 
+                                    <span>2 Tamu</span>
+                                </div>
+                            </div>
+
+                            <hr class="divider"> <div class="roomPerks">
+                                
+                                <div class="badge badge--success">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    <span>Termasuk Sarapan</span>
+                                </div>
+                                
+                                <div class="badge badge--neutral">
+                                    <i class="fa-solid fa-wifi"></i>
+                                    <span>WiFi Gratis</span>
+                                </div>
+
+                                <div class="badge badge--danger">
+                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                    <span>Tidak Bisa Refund</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule">
+                    <div class="widgetHeader">
+                        <a href="#" class="editLink">Edit Jadwal</a>
+                    </div>
+
+                    <div class="dateCard">
+                        
+                        <div class="dateGroup text-left">
+                            <time datetime="2025-12-18">
+                                <span class="dayDate">Kamis, 18</span>
+                                <span class="monthYear">Desember 2025</span>
+                            </time>
+                            <span class="timeInfo">15.00 WIB</span>
+                        </div>
+
+                        <div class="durationGroup">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                            <span class="nightCount">1 malam</span>
+                        </div>
+
+                        <div class="dateGroup text-right">
+                            <time datetime="2025-12-19">
+                                <span class="dayDate">Jumat, 19</span>
+                                <span class="monthYear">Desember 2025</span>
+                            </time>
+                            <span class="timeInfo">20.00 WIB</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="priceSummaryCard">
+                    
+                    <h3 class="summaryTitle">Rincian Harga</h3>
+
+                    <div class="billList">
+                        
+                        <div class="billItem">
+                            <div class="itemLabel">
+                                <span class="mainText">Harga Kamar</span>
+                                <span class="subText">Deluxe Room</span>
+                            </div>
+                            <div class="itemPrice">Rp1.476.161</div>
+                        </div>
+
+                        <div class="billItem">
+                            <div class="itemLabel">
+                                <span class="mainText">Pajak dan Biaya Lain</span>
+                            </div>
+                            <div class="itemPrice">Rp293.749</div>
+                        </div>
+
+                    </div>
+
+                    <div class="totalFooter">
+                        <div class="totalLabel">
+                            <span class="totalText">Total</span>
+                            <span class="totalSubText">1 Kamar, 1 Malam</span>
+                        </div>
+                        <div class="totalPrice">Rp1.769.910</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+    <script src="js/toggle.js"></script>
+
+</body>
+</html>

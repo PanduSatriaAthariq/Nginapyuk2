@@ -1,0 +1,366 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --font-primary: 'Outfit', sans-serif;
+    --color-primary: #1F12D4;
+    --color-secondary: #FCC900;
+    --color-text: #1d1d1d;
+}
+
+* {
+    box-sizing: border-box; /* Wajib ada biar padding gak ngerusak width */
+    font-family: var(--font-primary);
+    margin: 0; padding: 0;
+}
+
+body {
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Pastikan body minimal setinggi layar */
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbarCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    
+    /* REVISI: Hapus background & shadow agar bersih */
+    background: transparent; 
+    box-shadow: none; 
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+.logo span { color: var(--color-secondary); }
+
+.loginBtn { display: flex; gap: 16px; }
+
+.masukBtn, .daftarBtn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.masukBtn {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+.masukBtn:hover { background: #f0f0ff; }
+
+.daftarBtn {
+    background: var(--color-primary);
+    color: white;
+}
+.daftarBtn:hover { background: #150ba0; }
+
+/* =========================================
+   3. SUCCESS CONTENT (CENTERED)
+   ========================================= */
+.success {
+    flex: 1; /* Mengisi sisa ruang kosong antara Navbar dan Footer (kalau ada) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px; /* Padding aman atas bawah */
+    text-align: center; /* KUNCI: Biar semua teks & elemen anak ke tengah */
+}
+
+.successWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px; /* Batasi lebar konten biar teks gak memanjang drastis */
+    gap: 24px; /* Jarak antar elemen yang konsisten */
+}
+
+/* Ikon Centang dengan Lingkaran Background */
+.successWrap i {
+    font-size: 80px; /* 200px kegedean, 80px cukup */
+    color: var(--color-primary);
+    background: #E3F2FD; /* Lingkaran biru muda */
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    animation: popIn 1.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+}
+
+.successWrap h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #000;
+}
+
+.successWrap p {
+    font-size: 16px;
+    line-height: 1.6; /* Jarak antar baris biar enak dibaca */
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   4. BUTTONS AREA
+   ========================================= */
+.btnWrap {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.home, .detail {
+    padding: 16px 10px; /* Padding kiri-kanan dikurangi dikit biar muat teks panjang */
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* REVISI: Trik agar tombol sama panjang */
+    flex: 1;           /* Menyuruh tombol mengambil porsi ruang yang sama (1:1) */
+    width: 100%;       /* Memastikan lebar terpenuhi */
+    max-width: 280px;  /* Batasi agar tidak terlalu lebar (raksasa) di layar besar */
+    
+    /* Agar teks di tengah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.home:hover {
+    background-color: #f0f0ff;
+    transform: translateY(-2px);
+}
+
+.detail {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    color: white;
+    box-shadow: 0 10px 20px rgba(31, 18, 212, 0.2);
+}
+
+.detail:hover {
+    background-color: #150ba0;
+    border-color: #150ba0;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(31, 18, 212, 0.3);
+}
+
+/* Animasi Kecil biar Manis */
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1); opacity: 1; }
+    60% { transform: scale(0.95); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* =========================================
+   RESPONSIVE: TABLET (Max 1024px)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+    .navbarCont {
+        padding: 20px 60px; /* Konsisten dengan Landing Page/Form */
+    }
+    
+    .successWrap h1 {
+        font-size: 32px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: MOBILE (Max 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .navbarCont {
+        padding: 15px 20px;
+    }
+
+    /* Navbar items sedikit mengecil */
+    .logo { font-size: 28px; }
+
+    /* Konten Utama */
+    .success {
+        padding: 40px 20px;
+    }
+
+    .successWrap i {
+        width: 120px; height: 120px; /* Kecilkan lingkaran */
+        font-size: 60px; /* Kecilkan ikon */
+    }
+
+    .successWrap h1 {
+        font-size: 28px;
+    }
+
+    /* TOMBOL JADI TUMPUK (VERTICAL STACK) */
+    .btnWrap {
+        flex-direction: column; /* Ubah arah jadi kolom */
+        align-items: center;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .home, .detail {
+        width: 100%;       /* Penuhi lebar layar */
+        max-width: 100%;   /* Hapus batasan max-width desktop */
+        padding: 16px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: MOBILE KECIL (Max 480px)
+   ========================================= */
+@media screen and (max-width: 480px) {
+    .navbarCont {
+        padding: 12px 15px;
+    }
+    
+    .logo { font-size: 24px; }
+    
+    /* Tombol Login/Daftar di Navbar mengecil */
+    .loginBtn { gap: 10px; }
+    .masukBtn, .daftarBtn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    /* Ikon & Teks makin kecil agar pas */
+    .successWrap i {
+        width: 100px; height: 100px;
+        font-size: 50px;
+    }
+
+    .successWrap h1 { 
+        font-size: 24px; 
+    }
+    
+    .successWrap p { 
+        font-size: 14px; 
+        padding: 0 10px; /* Padding teks biar gak nempel pinggir layar */
+    }
+}
+
+/* =========================================
+   ADDITION: MODAL POPUP STYLES
+   ========================================= */
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Latar gelap transparan */
+    z-index: 9999;
+    display: none; /* Hidden default */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px); /* Efek blur kekinian */
+}
+
+.modal-card {
+    background: #fff;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.modal-body {
+    padding: 24px;
+    text-align: left; /* Reset text align */
+}
+
+.info-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-group label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.info-group span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.date-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+}
+
+.text-right { text-align: right; }
+.text-right label, .text-right span { align-self: flex-end; }
+
+.total-box {
+    margin-top: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-box span { font-weight: 600; color: #555; }
+.total-box .amount { font-size: 20px; color: var(--color-primary); font-weight: 800; }

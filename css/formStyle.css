@@ -1,0 +1,724 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --font-primary: 'Outfit', sans-serif;
+    --color-primary: #1F12D4; /* Biru NginapYuk */
+    --color-secondary: #FCC900; /* Kuning Rating */
+    --color-bg: #F5F6F8;      /* Abu background */
+    --color-text: #1d1d1d;
+    --color-border: #e0e0e0;
+    --radius-card: 16px;
+    --shadow-card: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg); 
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    margin: 0; padding: 0;
+}
+
+/* =========================================
+   3. LAYOUT UTAMA (GRID SYSTEM)
+   ========================================= */
+.bookingPageContainer {
+    max-width: 1240px;
+    margin: 40px auto;
+    padding: 0 20px;
+    padding-bottom: 100px;
+    
+    display: grid;
+    /* Grid: Kiri 1.8 bagian, Kanan 1 bagian */
+    grid-template-columns: 1.8fr 1fr; 
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* Kolom Kiri */
+.formSection {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Kolom Kanan (Sidebar) */
+.summary .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: sticky; /* Efek Sticky */
+    position: -webkit-sticky;
+    top: 20px;
+    z-index: 10;
+}
+
+/* Utility Class untuk Kartu Putih */
+.hotelInfoCard, .mainInfo, .request, .payment, .priceSummaryCard {
+    background: #ffffff;
+    border-radius: var(--radius-card);
+    padding: 30px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid #fff;
+}
+
+/* Judul Section (H1) */
+h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+    color: #000;
+}
+
+/* =========================================
+   4. COMPONENT: HOTEL INFO CARD (ATAS)
+   ========================================= */
+.hotelInfoCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hotelInfoCard .info h1 {
+    font-size: 24px; /* Judul Hotel lebih besar */
+    margin-bottom: 12px;
+}
+
+.starCont {
+    color: var(--color-secondary);
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.hotelInfoCard h2 {
+    background-color: var(--color-secondary);
+    color: #000;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hotelInfoCard img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #eee; /* Placeholder warna */
+}
+
+/* =========================================
+   5. COMPONENT: FORM DATA PEMESANAN
+   ========================================= */
+.formGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+}
+
+.form { margin-bottom: 20px; }
+.form:last-child { margin-bottom: 0; }
+
+.formLabel {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+.formLabel span { color: red; }
+
+.formInput, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+.formInput:focus, textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(31, 18, 212, 0.1);
+}
+
+textarea { resize: vertical; min-height: 100px; }
+.hidden { display: none; }
+
+/* =========================================
+   6. COMPONENT: CHECKBOX (BLUE STYLE)
+   ========================================= */
+.checkboxList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.conditionalInput {
+    overflow: hidden;
+    max-height: 0; /* Default: Tinggi 0 (Tersembunyi) */
+    opacity: 0;
+    transition: all 0.3s ease-in-out; /* Animasi mulus */
+    margin-top: 0;
+}
+
+/* Class ini akan ditambahkan lewat JS nanti */
+.conditionalInput.show {
+    max-height: 200px; /* Cukup tinggi untuk textarea */
+    opacity: 1;
+    margin-top: 15px; /* Beri jarak dari checkbox */
+}
+
+.customCheck {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+.customCheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0; width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0; left: 0;
+    height: 24px; width: 24px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.customCheck:hover input ~ .checkmark { border-color: var(--color-primary); }
+
+.customCheck input:checked ~ .checkmark {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.customCheck input:checked ~ .checkmark:after { display: block; }
+
+.customCheck .checkmark:after {
+    left: 8px; top: 4px;
+    width: 6px; height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* =========================================
+   7. COMPONENT: PAYMENT METHOD (GRID)
+   ========================================= */
+.paymentGroupsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Kolom Group */
+    gap: 20px;
+}
+
+.paymentGroupCard {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.paymentGroupCard h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.paymentOptionsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* --- Radio & Card Style --- */
+.payOption { cursor: pointer; user-select: none; }
+.payOption input[type="radio"] { display: none; }
+
+.payCard {
+    position: relative;
+    width: 80px; height: 50px;
+    background-color: transparent; /* Default Abu */
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s;
+}
+
+.payCard img {
+    max-width: 80%; max-height: 80%;
+    object-fit: contain;
+    /* mix-blend-mode: multiply; Biar nyatu sama background */
+}
+
+/* Logic Highlight */
+.payOption input:checked + .payCard {
+    background-color: #fff;
+    border-color: var(--color-primary);
+}
+
+.checkBadge {
+    position: absolute;
+    top: -6px; right: -6px;
+    width: 18px; height: 18px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transform: scale(0);
+    transition: all 0.2s;
+}
+
+.payOption input:checked + .payCard .checkBadge {
+    opacity: 1; transform: scale(1);
+}
+
+/* Tombol Bayar Besar */
+.payBtn {
+    width: 100%;
+    padding: 18px;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(31, 18, 212, 0.2);
+    margin-top: 10px;
+}
+
+/* =========================================
+   8. SIDEBAR COMPONENT: DELUXE ROOM (BLUE)
+   ========================================= */
+.roomCard {
+    background-color: var(--color-primary); /* Kartu Biru */
+    border-radius: var(--radius-card);
+    padding: 24px;
+    color: white;
+    box-shadow: var(--shadow-card);
+}
+
+.roomCard h1 { color: white; margin-bottom: 20px; }
+
+.roomCardWrap {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.roomCardWrap img {
+    width: 120px;
+    height: 120px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: #ccc;
+    flex-shrink: 0;
+}
+
+/* Kotak Putih Details */
+.roomDetailsContainer {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    flex: 1; /* Ambil sisa ruang */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 120px;
+    justify-content: center;
+}
+
+.roomSpecs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.specItem {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; color: #333;
+}
+.specItem i { color: var(--color-primary); width: 16px; }
+
+.divider { border: 0; border-top: 1px solid #eee; margin: 0; }
+
+.roomPerks { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px; font-weight: 600;
+    display: flex; align-items: center; gap: 4px;
+}
+
+.badge--success { background: #E3F2FD; color: var(--color-primary); }
+.badge--neutral { background: #f5f5f5; color: #666; }
+.badge--danger { background: #FFEBEE; color: #D32F2F; }
+
+/* =========================================
+   9. SIDEBAR COMPONENT: SCHEDULE (BLUE)
+   ========================================= */
+.schedule {
+    display: flex; flex-direction: column; gap: 8px;
+}
+
+.widgetHeader { display: flex; justify-content: flex-end; }
+.editLink { color: #000; font-size: 14px; font-weight: 600; text-decoration: none; }
+
+.dateCard {
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dateGroup { display: flex; flex-direction: column; gap: 4px; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.dayDate { font-size: 16px; font-weight: 600; display: block; }
+.monthYear { font-size: 16px; font-weight: 700; margin-bottom: 6px; display: block; }
+.timeInfo { font-size: 11px; opacity: 0.8; }
+
+.durationGroup {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.durationGroup i { font-size: 20px; }
+.nightCount { font-size: 11px; }
+
+/* =========================================
+   10. SIDEBAR COMPONENT: PRICE SUMMARY
+   ========================================= */
+.priceSummaryCard {
+    padding: 0; /* Override padding default */
+    overflow: hidden; /* Biar footer biru gak keluar */
+    display: flex; flex-direction: column;
+}
+
+.summaryTitle {
+    padding: 24px 24px 16px 24px;
+    margin: 0;
+}
+
+.billList {
+    margin: 0 24px 24px 24px;
+    padding-left: 16px;
+    border-left: 2px solid #000;
+    display: flex; flex-direction: column; gap: 16px;
+}
+
+.billItem {
+    display: flex; justify-content: space-between; align-items: flex-start;
+}
+
+.itemLabel { display: flex; flex-direction: column; gap: 2px; }
+.mainText { font-size: 14px; font-weight: 700; color: #000; }
+.subText { font-size: 12px; color: #666; }
+.itemPrice { font-size: 14px; font-weight: 700; }
+
+.totalFooter {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 16px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: auto;
+}
+
+.totalLabel { display: flex; flex-direction: column; gap: 2px; }
+.totalText { font-size: 14px; font-weight: 700; }
+.totalSubText { font-size: 11px; opacity: 0.9; }
+.totalPrice { font-size: 18px; font-weight: 700; }
+
+
+/* =========================================
+   RESPONSIVE: TABLET / LAPTOP KECIL
+   ========================================= */
+/* =========================================
+   RESPONSIVE: TABLET (Max 1024px)
+   ========================================= */
+/* =========================================
+   RESPONSIVE: TABLET & MOBILE LANDSCAPE (Max 1024px)
+   ========================================= */
+/* =========================================
+   RESPONSIVE: TABLET & LAPTOP KECIL (Max 1024px)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+    
+    /* 1. Layout Utama: Flex Column */
+    .bookingPageContainer {
+        display: flex; 
+        flex-direction: column; 
+        gap: 30px;
+        margin: 20px auto; 
+        padding-bottom: 60px;
+        align-items: stretch;
+    }
+
+    /* 2. UX LOGIC: Summary Pindah ke Atas */
+    .summary { order: -1; width: 100%; }
+    .formSection { order: 1; }
+
+    /* --- 3. BENTO GRID (SIDE-BY-SIDE) --- */
+    .summary .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Bagi 2 kolom */
+        gap: 20px;
+        position: static;
+        align-items: stretch; /* Paksa tinggi kolom sama */
+    }
+
+    /* --- 4. COMPACT ROOM CARD (KIRI) --- */
+    .roomCard {
+        grid-column: span 1;
+        padding: 16px; /* Kurangi padding agar hemat tempat */
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Konten di tengah vertikal */
+    }
+
+    /* Judul 'Deluxe Room' Dikecilkan */
+    .roomCard h1 {
+        font-size: 16px; 
+        margin-bottom: 12px;
+    }
+
+    .roomCardWrap {
+        gap: 12px;
+        align-items: center; /* Gambar & Info sejajar tengah */
+    }
+
+    /* Gambar Dikecilkan Drastis */
+    .roomCardWrap img {
+        width: 80px;  /* Kecilkan jadi 80px */
+        height: 80px;
+        border-radius: 8px;
+    }
+
+    /* Kotak Putih Info Dikecilkan */
+    .roomDetailsContainer {
+        padding: 10px;
+        min-height: auto; /* Hapus min-height agar menyusut */
+        gap: 6px;
+    }
+
+    /* Text Specs (Kasur/Tamu) Dikecilkan */
+    .roomSpecs { gap: 4px; }
+    .specItem { font-size: 10px; }
+    .specItem i { width: 12px; font-size: 10px; }
+
+    /* Divider Tipis */
+    .divider { margin: 2px 0; }
+
+    /* Badges (Sarapan/Wifi) Dikecilkan */
+    .badge {
+        padding: 2px 6px;
+        font-size: 9px;
+        border-radius: 4px;
+    }
+    .roomPerks { gap: 4px; }
+
+    /* --- 5. SCHEDULE CARD (KANAN) --- */
+    .schedule {
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Dorong ke bawah biar sejajar */
+        height: 100%;
+    }
+    
+    .widgetHeader {
+        margin-bottom: 8px; /* Jarak dikit ke kartu biru */
+    }
+
+    .dateCard {
+        flex: 1; /* Isi sisa ruang tinggi agar sama dengan Room Card */
+        padding: 16px; /* Samakan padding dengan Room Card */
+        max-height: 100%; /* Safety */
+    }
+
+    /* Font di Date Card disesuaikan dikit */
+    .dayDate { font-size: 14px; }
+    .monthYear { font-size: 14px; }
+    .timeInfo { font-size: 10px; }
+    
+    /* --- 6. HARGA & LAINNYA --- */
+    .priceSummaryCard {
+        grid-column: span 2; /* Full Width di bawahnya */
+    }
+
+    .navbarCont { padding: 20px 40px; }
+}
+
+/* =========================================
+   RESPONSIVE: MOBILE BESAR (Max 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Navbar Konsisten dengan Landing Page */
+    .navbarCont {
+        padding: 15px 20px;
+    }
+    .logo { font-size: 32px; }
+
+    /* 2. Form Input Menumpuk (Agar luas untuk diketik) */
+    .formGroup {
+        grid-template-columns: 1fr; /* Ubah dari 2 kolom jadi 1 kolom */
+        gap: 20px;
+    }
+
+    /* 3. Grup Pembayaran Menumpuk */
+    /* Di layar segini, 2 kolom payment mulai sempit. Kita tumpuk saja. */
+    .paymentGroupsContainer {
+        grid-template-columns: 1fr; 
+    }
+
+    /* 4. Judul Section Sedikit Mengecil */
+    h1 { font-size: 18px; }
+    
+    /* 5. Padding Container Dikurangi */
+    .bookingPageContainer {
+        padding: 0 20px 80px 20px; /* Bawah dilebihin dikit */
+    }
+}
+
+/* =========================================
+   RESPONSIVE: MOBILE KECIL (Max 480px)
+   ========================================= */
+@media screen and (max-width: 480px) {
+    
+    .navbarCont { padding: 12px 15px; }
+    .logo { font-size: 24px; }
+    .masukBtn, .daftarBtn { font-size: 12px; padding: 6px 12px; }
+
+    /* --- 1. REVOLUSI HEADER HOTEL (Full Width Image) --- */
+    .hotelInfoCard {
+        /* Kita balik urutannya: Gambar di Atas, Teks di Bawah */
+        flex-direction: column-reverse; 
+        gap: 15px;
+        align-items: flex-start;
+        padding: 20px; /* Kurangi padding kartu biar muat konten lebih banyak */
+    }
+
+    .hotelInfoCard img {
+        width: 100%;       /* Gambar memenuhi lebar kartu */
+        height: 180px;     /* Tinggi fix biar estetik */
+        object-fit: cover;
+    }
+
+    .hotelInfoCard .info {
+        width: 100%;
+    }
+    
+    /* --- 2. REVOLUSI SIDEBAR KAMAR (Full Width Image) --- */
+    .roomCardWrap {
+        flex-direction: column; /* Tumpuk ke bawah */
+    }
+
+    .roomCardWrap img {
+        width: 100%;
+        height: 180px;     /* Gambar besar biar user puas liat kamar */
+        aspect-ratio: auto; /* Matikan rasio kotak 1:1, ganti jadi persegi panjang */
+    }
+
+    .roomDetailsContainer {
+        width: 100%;
+    }
+
+    /* --- 3. PAYMENT GRID (Logo Dikecilkan Dikit) --- */
+    .paymentOptionsGrid {
+        gap: 10px;
+    }
+    
+    .payCard {
+        width: 70px;  /* Kecilkan sedikit dari 80px */
+        height: 45px; /* Kecilkan sedikit dari 50px */
+    }
+
+    /* --- 4. DATA PEMESANAN --- */
+    /* Hapus border input biar clean di HP? Opsional. 
+       Tapi kita pertahankan border biar jelas area tap-nya. */
+    .formInput, textarea {
+        font-size: 14px; /* Font input jangan kekecilan, minimal 14px */
+    }
+
+    .summary .wrap {
+        display: flex; /* Balik jadi Flex Column */
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .priceSummaryCard {
+        grid-column: auto; /* Reset grid */
+    }
+}
+
+/* --- UPDATE BARU: PERBAIKAN TAMPILAN CARD --- */
+
+/* 1. Batasi Lebar Alamat (Agar tidak menabrak foto) */
+.hotelInfoCard .info p {
+    max-width: 85%; /* Text hanya akan memakan 85% lebar area, sisa 15% jadi jarak aman ke foto */
+    line-height: 1.4;
+    color: #666; /* Pastikan warna abu-abu agar rapi */
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* 2. Deskripsi Permintaan Khusus (Font Kecil di bawah Judul) */
+.request p {
+    font-size: 12px;      /* Ukuran huruf lebih kecil */
+    color: #777;          /* Warna abu-abu agar tidak mendominasi */
+    margin-top: -20px;    /* Tarik ke atas agar nempel dekat judul H3 */
+    margin-bottom: 20px;  /* Beri jarak ke area checklist di bawahnya */
+    line-height: 1.4;
+}
+
+.loginAlert {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    margin-bottom: -20px;
+}
+
+.loginAlert i {
+    color: #FAAD14; /* Icon orange */
+    font-size: 16px;
+}
+
+.loginAlert span {
+    font-size: 14px; 
+    color: #555;
+    font-weight: 500;
+}
